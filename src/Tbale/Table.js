@@ -1,11 +1,28 @@
 import React, { useState, useEffect } from 'react';
 
 function Table() {
+
     const [state, setState] = useState('');
+
+    const [StateMinute, SetMinute] = useState('');
 
     const [state2, setState2] = useState('');
 
-    const [resulte, setresult] = useState()
+    const [StateMinute2, SetMinute2] = useState('');
+
+    const [Price, SetPrice] = useState('');
+
+    const [TotaleAmount, SetTotaleAmount] = useState('');
+
+    function SetTotale() {
+        let Totale = +state + +StateMinute / 10 + +state2 + +StateMinute2 / 10
+        SetTotaleAmount(Price * Totale)
+    }
+
+    useEffect(() => {
+        SetTotale()
+
+    }, [state, StateMinute, state2, StateMinute2, Price])
 
     const handleChangeHour1 = (event) => {
         setState(event.target.value);
@@ -15,13 +32,10 @@ function Table() {
 
     const handleChangeMunit1 = (event2) => {
         let munit = event2.target.value;
-        let Sum = +state + munit / 10;
 
-        setState(Sum);
+
+        SetMinute(munit);
     };
-
-
-
 
     const handleChangeHour2 = (event3) => {
         let munit = event3.target.value;
@@ -32,23 +46,23 @@ function Table() {
     const handleChangeMunit2 = (event3) => {
 
         let munit = event3.target.value;
-        let Sum = +state2 + munit / 10;
 
-        setState2(Sum);
+
+        SetMinute2(munit);
 
 
 
     }
 
 
-    useEffect(() => {
-        console.log(state);
-        // Logs the updated state value whenever it changes
-    }, [state]);
+    const handleChangePrice = (event) => {
 
-    useEffect(() => {
-        console.log(state2)
-    }, [state2])
+        SetPrice(event.target.value)
+
+    }
+
+
+
 
 
 
@@ -104,11 +118,16 @@ function Table() {
 
                             </td>
                             <td className="px-6 py-4">
-                                {resulte}
+                                <input className='w-8' onChange={handleChangePrice} placeholder=' 00$' />
                             </td>
                             <td className="px-6 py-4">
-                                1200
+                                {+state + +StateMinute / 10 + +state2 + +StateMinute2 / 10}
+
                             </td>
+                            <td>
+                                {TotaleAmount}
+                            </td>
+
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -130,10 +149,13 @@ function Table() {
 
                             </td>
                             <td className="px-6 py-4">
-                                1200
+                                price
                             </td>
                             <td className="px-6 py-4">
-                                1200
+                                hour
+                            </td>
+                            <td>
+                                jjj
                             </td>
                         </tr>
                         <tr className="bg-white dark:bg-gray-800">
@@ -156,12 +178,19 @@ function Table() {
 
                             </td>
                             <td className="px-6 py-4">
-                                1200
+                                prie
                             </td>
                             <td className="px-6 py-4">
-                                1200
+                                hour
                             </td>
+                            <td>
+                                jjj
+                            </td>
+
+
                         </tr>
+
+
                     </tbody>
                 </table>
             </div>
