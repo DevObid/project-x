@@ -1,7 +1,9 @@
+
+
 import React, { useState, useEffect } from 'react';
 
 function Table() {
-
+    // State for Monday
     const [hoursMonday1, setHoursMonday1] = useState(0);
     const [minutesMonday1, setMinutesMonday1] = useState(0);
     const [hoursMonday2, setHoursMonday2] = useState(0);
@@ -13,7 +15,7 @@ function Table() {
     const [totalMinutesMonday, setTotalMinutesMonday] = useState(0);
     const [totalAmountMonday, setTotalAmountMonday] = useState(0);
 
-
+    // State for Tuesday
     const [hoursTuesday1, setHoursTuesday1] = useState(0);
     const [minutesTuesday1, setMinutesTuesday1] = useState(0);
     const [hoursTuesday2, setHoursTuesday2] = useState(0);
@@ -25,7 +27,7 @@ function Table() {
     const [totalMinutesTuesday, setTotalMinutesTuesday] = useState(0);
     const [totalAmountTuesday, setTotalAmountTuesday] = useState(0);
 
-
+    // State for Wednesday
     const [hoursWednesday1, setHoursWednesday1] = useState(0);
     const [minutesWednesday1, setMinutesWednesday1] = useState(0);
     const [hoursWednesday2, setHoursWednesday2] = useState(0);
@@ -37,7 +39,7 @@ function Table() {
     const [totalMinutesWednesday, setTotalMinutesWednesday] = useState(0);
     const [totalAmountWednesday, setTotalAmountWednesday] = useState(0);
 
-
+    // State for Thursday
     const [hoursThursday1, setHoursThursday1] = useState(0);
     const [minutesThursday1, setMinutesThursday1] = useState(0);
     const [hoursThursday2, setHoursThursday2] = useState(0);
@@ -49,7 +51,7 @@ function Table() {
     const [totalMinutesThursday, setTotalMinutesThursday] = useState(0);
     const [totalAmountThursday, setTotalAmountThursday] = useState(0);
 
-
+    // State for Friday
     const [hoursFriday1, setHoursFriday1] = useState(0);
     const [minutesFriday1, setMinutesFriday1] = useState(0);
     const [hoursFriday2, setHoursFriday2] = useState(0);
@@ -61,7 +63,7 @@ function Table() {
     const [totalMinutesFriday, setTotalMinutesFriday] = useState(0);
     const [totalAmountFriday, setTotalAmountFriday] = useState(0);
 
-
+    // State for Saturday
     const [hoursSaturday1, setHoursSaturday1] = useState(0);
     const [minutesSaturday1, setMinutesSaturday1] = useState(0);
     const [hoursSaturday2, setHoursSaturday2] = useState(0);
@@ -73,7 +75,7 @@ function Table() {
     const [totalMinutesSaturday, setTotalMinutesSaturday] = useState(0);
     const [totalAmountSaturday, setTotalAmountSaturday] = useState(0);
 
-
+    // State for Sunday
     const [hoursSunday1, setHoursSunday1] = useState(0);
     const [minutesSunday1, setMinutesSunday1] = useState(0);
     const [hoursSunday2, setHoursSunday2] = useState(0);
@@ -85,55 +87,132 @@ function Table() {
     const [totalMinutesSunday, setTotalMinutesSunday] = useState(0);
     const [totalAmountSunday, setTotalAmountSunday] = useState(0);
 
+    // Calculation functions
+    function calculateMonday() {
+        let totalHours = +hoursMonday1 + +hoursMonday2 - breakHoursMonday;
+        let totalMinutes = +minutesMonday1 + +minutesMonday2 - breakMinutesMonday;
 
+        if (totalMinutes >= 60) {
+            totalHours += Math.floor(totalMinutes / 60);
+            totalMinutes = totalMinutes % 60;
+        }
 
+        setTotalHoursMonday(totalHours);
+        setTotalMinutesMonday(totalMinutes);
+        setTotalAmountMonday(priceMonday * (totalHours + totalMinutes / 60));
+    }
 
+    function calculateTuesday() {
+        let totalHours = +hoursTuesday1 + +hoursTuesday2 - breakHoursTuesday;
+        let totalMinutes = +minutesTuesday1 + +minutesTuesday2 - breakMinutesTuesday;
 
+        if (totalMinutes >= 60) {
+            totalHours += Math.floor(totalMinutes / 60);
+            totalMinutes = totalMinutes % 60;
+        }
 
+        setTotalHoursTuesday(totalHours);
+        setTotalMinutesTuesday(totalMinutes);
+        setTotalAmountTuesday(priceTuesday * (totalHours + totalMinutes / 60));
+    }
 
+    function calculateWednesday() {
+        let totalHours = +hoursWednesday1 + +hoursWednesday2 - breakHoursWednesday;
+        let totalMinutes = +minutesWednesday1 + +minutesWednesday2 - breakMinutesWednesday;
 
+        if (totalMinutes >= 60) {
+            totalHours += Math.floor(totalMinutes / 60);
+            totalMinutes = totalMinutes % 60;
+        }
 
+        setTotalHoursWednesday(totalHours);
+        setTotalMinutesWednesday(totalMinutes);
+        setTotalAmountWednesday(priceWednesday * (totalHours + totalMinutes / 60));
+    }
 
+    function calculateThursday() {
+        let totalHours = +hoursThursday1 + +hoursThursday2 - breakHoursThursday;
+        let totalMinutes = +minutesThursday1 + +minutesThursday2 - breakMinutesThursday;
 
-    const [hours1, setHours1] = useState(0);
-    const [minutes1, setMinutes1] = useState(0);
+        if (totalMinutes >= 60) {
+            totalHours += Math.floor(totalMinutes / 60);
+            totalMinutes = totalMinutes % 60;
+        }
 
+        setTotalHoursThursday(totalHours);
+        setTotalMinutesThursday(totalMinutes);
+        setTotalAmountThursday(priceThursday * (totalHours + totalMinutes / 60));
+    }
 
+    function calculateFriday() {
+        let totalHours = +hoursFriday1 + +hoursFriday2 - breakHoursFriday;
+        let totalMinutes = +minutesFriday1 + +minutesFriday2 - breakMinutesFriday;
 
-    // const [hours2, setHours2] = useState(0);
-    // const [minutes2, setMinutes2] = useState(0);
+        if (totalMinutes >= 60) {
+            totalHours += Math.floor(totalMinutes / 60);
+            totalMinutes = totalMinutes % 60;
+        }
 
-    // const [price, setPrice] = useState(0);
-    // const [totalAmount, setTotalAmount] = useState(0);
+        setTotalHoursFriday(totalHours);
+        setTotalMinutesFriday(totalMinutes);
+        setTotalAmountFriday(priceFriday * (totalHours + totalMinutes / 60));
+    }
 
-    // const [BreakHours, setBreakHours] = useState(0);
-    // const [Breakminutes, setBreakMinutes] = useState(0);
+    function calculateSaturday() {
+        let totalHours = +hoursSaturday1 + +hoursSaturday2 - breakHoursSaturday;
+        let totalMinutes = +minutesSaturday1 + +minutesSaturday2 - breakMinutesSaturday;
 
+        if (totalMinutes >= 60) {
+            totalHours += Math.floor(totalMinutes / 60);
+            totalMinutes = totalMinutes % 60;
+        }
 
-    // const [totalHours, setTotalHours] = useState(0);
-    // const [totalMinutes, setTotalMinutes] = useState(0);
+        setTotalHoursSaturday(totalHours);
+        setTotalMinutesSaturday(totalMinutes);
+        setTotalAmountSaturday(priceSaturday * (totalHours + totalMinutes / 60));
+    }
 
+    function calculateSunday() {
+        let totalHours = +hoursSunday1 + +hoursSunday2 - breakHoursSunday;
+        let totalMinutes = +minutesSunday1 + +minutesSunday2 - breakMinutesSunday;
 
+        if (totalMinutes >= 60) {
+            totalHours += Math.floor(totalMinutes / 60);
+            totalMinutes = totalMinutes % 60;
+        }
 
-    // function calculateTotal() {
-    //     let totalHours = +hoursMonday + +hours2 - BreakHours;
-    //     let totalMinutes = +minutes1 + +minutes2 - Breakminutes;
+        setTotalHoursSunday(totalHours);
+        setTotalMinutesSunday(totalMinutes);
+        setTotalAmountSunday(priceSunday * (totalHours + totalMinutes / 60));
+    }
 
-    //     if (totalMinutes >= 60) {
-    //         totalHours += Math.floor(totalMinutes / 60);
-    //         totalMinutes = totalMinutes % 60;
-    //     }
+    useEffect(() => {
+        calculateMonday();
+    }, [hoursMonday1, minutesMonday1, hoursMonday2, minutesMonday2, breakHoursMonday, breakMinutesMonday, priceMonday]);
 
-    //     setTotalHours(totalHours);
-    //     setTotalMinutes(totalMinutes);
-    //     setTotalAmount(price * (totalHours + totalMinutes / 60));
-    // }
+    useEffect(() => {
+        calculateTuesday();
+    }, [hoursTuesday1, minutesTuesday1, hoursTuesday2, minutesTuesday2, breakHoursTuesday, breakMinutesTuesday, priceTuesday]);
 
-    // useEffect(() => {
-    //     calculateTotal();
+    useEffect(() => {
+        calculateWednesday();
+    }, [hoursWednesday1, minutesWednesday1, hoursWednesday2, minutesWednesday2, breakHoursWednesday, breakMinutesWednesday, priceWednesday]);
 
-    // }, [hours1, minutes1, hours2, minutes2, price, BreakHours, Breakminutes]);
+    useEffect(() => {
+        calculateThursday();
+    }, [hoursThursday1, minutesThursday1, hoursThursday2, minutesThursday2, breakHoursThursday, breakMinutesThursday, priceThursday]);
 
+    useEffect(() => {
+        calculateFriday();
+    }, [hoursFriday1, minutesFriday1, hoursFriday2, minutesFriday2, breakHoursFriday, breakMinutesFriday, priceFriday]);
+
+    useEffect(() => {
+        calculateSaturday();
+    }, [hoursSaturday1, minutesSaturday1, hoursSaturday2, minutesSaturday2, breakHoursSaturday, breakMinutesSaturday, priceSaturday]);
+
+    useEffect(() => {
+        calculateSunday();
+    }, [hoursSunday1, minutesSunday1, hoursSunday2, minutesSunday2, breakHoursSunday, breakMinutesSunday, priceSunday]);
 
 
     const handleChangeHoursMonday = (event) => {
@@ -225,145 +304,139 @@ function Table() {
     };
 
     const handleChangePriceWednesday = (event) => {
-        setPrice(event.target.value);
+        setPriceWednesday(event.target.value);
     };
 
     const handleChangeHoursBreakWednesday = (event) => {
-        setBreakHours(event.target.value);
+        setBreakHoursWednesday(event.target.value);
     };
 
     const handleChangeMinutesBreakWednesday = (event) => {
-        setBreakMinutes(event.target.value);
+        setBreakMinutesWednesday(event.target.value);
     };
 
 
     // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     const handleChangeHoursThursday = (event) => {
-        setHours4(event.target.value);
+        setMinutesThursday1(event.target.value);
     };
 
     const handleChangeMinutesThursday = (event) => {
-        setMinutes4(event.target.value);
+        setHoursThursday1(event.target.value);
     };
 
     const handleChangeHoursThursday2 = (event) => {
-        setHours4(event.target.value);
+        setMinutesThursday2(event.target.value);
     };
 
     const handleChangeMinutesThursday2 = (event) => {
-        setMinutes4(event.target.value);
+        setHoursThursday2(event.target.value);
     };
 
     const handleChangePriceThursday = (event) => {
-        setPrice(event.target.value);
+        setPriceThursday(event.target.value);
     };
 
     const handleChangeHoursBreakThursday = (event) => {
-        setBreakHours(event.target.value);
+        setBreakMinutesThursday(event.target.value);
     };
 
     const handleChangeMinutesBreakThursday = (event) => {
-        setBreakMinutes(event.target.value);
+        setBreakHoursThursday(event.target.value);
     };
 
 
-
+    //////////////////////
 
     const handleChangeHoursFriday = (event) => {
-        setHours5(event.target.value);
+        setHoursFriday1(event.target.value);
     };
 
     const handleChangeMinutesFriday = (event) => {
-        setMinutes5(event.target.value);
+        setMinutesFriday1(event.target.value);
     };
 
 
     const handleChangeHoursFriday2 = (event) => {
-        setHours5(event.target.value);
+        setHoursFriday2(event.target.value);
     };
 
     const handleChangeMinutesFriday2 = (event) => {
-        setMinutes5(event.target.value);
+        setMinutesFriday2(event.target.value);
     };
 
     const handleChangePriceFriday = (event) => {
-        setPrice(event.target.value);
+        setPriceFriday(event.target.value);
     };
 
     const handleChangeHoursBreakFriday = (event) => {
-        setBreakHours(event.target.value);
+        setBreakHoursFriday(event.target.value);
     };
 
     const handleChangeMinutesBreakFriday = (event) => {
-        setBreakMinutes(event.target.value);
+        setBreakMinutesFriday(event.target.value);
     };
 
-    //xxxxxxxxxxxxxxxxxxxxxxxx
+    //xxxxxxxxxxxxxxxxxxxxxxxxxx
+
 
     const handleChangeHoursSaturday = (event) => {
-        setHours6(event.target.value);
+        setHoursSaturday1(event.target.value);
     };
 
     const handleChangeMinutesSaturday = (event) => {
-        setMinutes6(event.target.value);
+        setMinutesSaturday1(event.target.value);
     };
 
     const handleChangeHoursSaturday2 = (event) => {
-        setHours6(event.target.value);
+        setHoursSaturday2(event.target.value);
     };
 
     const handleChangeMinutesSaturday2 = (event) => {
-        setMinutes6(event.target.value);
+        setMinutesSaturday2(event.target.value);
     };
 
     const handleChangePriceSaturday = (event) => {
-        setPrice(event.target.value);
+        setPriceSaturday(event.target.value);
     };
 
     const handleChangeHoursBreakSaturday = (event) => {
-        setBreakHours(event.target.value);
+        setBreakHoursSaturday(event.target.value);
     };
 
     const handleChangeMinutesBreakSaturday = (event) => {
-        setBreakMinutes(event.target.value);
+        setBreakMinutesSaturday(event.target.value);
     };
 
     // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
     const handleChangeHoursSunday = (event) => {
-        setHours7(event.target.value);
+        setHoursSunday1(event.target.value);
     };
 
     const handleChangeMinutesSunday = (event) => {
-        setMinutes7(event.target.value);
+        setMinutesSunday1(event.target.value);
     };
 
     const handleChangeHoursSunday2 = (event) => {
-        setHours7(event.target.value);
+        setHoursSunday2(event.target.value);
     };
 
     const handleChangeMinutesSunday2 = (event) => {
-        setMinutes7(event.target.value);
+        setMinutesSunday2(event.target.value);
     };
 
     const handleChangePriceSunday = (event) => {
-        setPrice(event.target.value);
+        setPriceSunday(event.target.value);
     };
 
     const handleChangeHoursBreakSunday = (event) => {
-        setBreakHours(event.target.value);
+        setBreakHoursSunday(event.target.value);
     };
 
     const handleChangeMinutesBreakSunday = (event) => {
-        setBreakMinutes(event.target.value);
+        setBreakMinutesSunday(event.target.value);
     };
-
-
-
-
-
-
 
     return (
         <div>
@@ -381,7 +454,6 @@ function Table() {
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 Monday
@@ -389,25 +461,25 @@ function Table() {
                             <td className="px-6 py-4">
                                 <div className="h-[100%] w-[100%] flex justify-center items-center">
                                     <input onChange={handleChangeHoursMonday} className="w-8" placeholder="00" />
-                                    <input onChange={handleChangeMinutesMonday} min={0} type='number' max={59} className="w-8" placeholder="00" />
+                                    <input onChange={handleChangeMinutesMonday} min={0} type="number" max={59} className="w-8" placeholder="00" />
                                 </div>
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursMonday2} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesMonday2} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesMonday2} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursBreakMonday} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesBreakMonday} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesBreakMonday} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangePriceMonday} placeholder="00$" />
                             </td>
                             <td className="px-6 py-4">
-                                {totalHours} : {totalMinutes}
+                                {totalHoursMonday} : {totalMinutesMonday}
                             </td>
                             <td className="px-6 py-4">
-                                {totalAmount}
+                                {totalAmountMonday}
                             </td>
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -417,25 +489,25 @@ function Table() {
                             <td className="px-6 py-4">
                                 <div className="h-[100%] w-[100%] flex justify-center items-center">
                                     <input onChange={handleChangeHoursTuesday} className="w-8" placeholder="00" />
-                                    <input onChange={handleChangeMinutesTuesday} min={0} type='number' max={59} className="w-8" placeholder="00" />
+                                    <input onChange={handleChangeMinutesTuesday} min={0} type="number" max={59} className="w-8" placeholder="00" />
                                 </div>
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursTuesday2} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesTuesday2} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesTuesday2} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursBreakTuesday} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesBreakTuesday} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesBreakTuesday} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangePriceTuesday} placeholder="00$" />
                             </td>
                             <td className="px-6 py-4">
-                                {totalHours} : {totalMinutes}
+                                {totalHoursTuesday} : {totalMinutesTuesday}
                             </td>
                             <td className="px-6 py-4">
-                                {totalAmount}
+                                {totalAmountTuesday}
                             </td>
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -445,25 +517,25 @@ function Table() {
                             <td className="px-6 py-4">
                                 <div className="h-[100%] w-[100%] flex justify-center items-center">
                                     <input onChange={handleChangeHoursWednesday} className="w-8" placeholder="00" />
-                                    <input onChange={handleChangeMinutesWednesday} min={0} type='number' max={59} className="w-8" placeholder="00" />
+                                    <input onChange={handleChangeMinutesWednesday} min={0} type="number" max={59} className="w-8" placeholder="00" />
                                 </div>
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursWednesday2} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesWednesday2} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesWednesday2} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursBreakWednesday} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesBreakWednesday} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesBreakWednesday} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangePriceWednesday} placeholder="00$" />
                             </td>
                             <td className="px-6 py-4">
-                                {totalHours} : {totalMinutes}
+                                {totalHoursWednesday} : {totalMinutesWednesday}
                             </td>
                             <td className="px-6 py-4">
-                                {totalAmount}
+                                {totalAmountWednesday}
                             </td>
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -473,25 +545,25 @@ function Table() {
                             <td className="px-6 py-4">
                                 <div className="h-[100%] w-[100%] flex justify-center items-center">
                                     <input onChange={handleChangeHoursThursday} className="w-8" placeholder="00" />
-                                    <input onChange={handleChangeMinutesThursday} min={0} type='number' max={59} className="w-8" placeholder="00" />
+                                    <input onChange={handleChangeMinutesThursday} min={0} type="number" max={59} className="w-8" placeholder="00" />
                                 </div>
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursThursday2} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesThursday2} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesThursday2} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursBreakThursday} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesBreakThursday} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesBreakThursday} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangePriceThursday} placeholder="00$" />
                             </td>
                             <td className="px-6 py-4">
-                                {totalHours} : {totalMinutes}
+                                {totalHoursThursday} : {totalMinutesThursday}
                             </td>
                             <td className="px-6 py-4">
-                                {totalAmount}
+                                {totalAmountThursday}
                             </td>
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -501,25 +573,25 @@ function Table() {
                             <td className="px-6 py-4">
                                 <div className="h-[100%] w-[100%] flex justify-center items-center">
                                     <input onChange={handleChangeHoursFriday} className="w-8" placeholder="00" />
-                                    <input onChange={handleChangeMinutesFriday} min={0} type='number' max={59} className="w-8" placeholder="00" />
+                                    <input onChange={handleChangeMinutesFriday} min={0} type="number" max={59} className="w-8" placeholder="00" />
                                 </div>
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursFriday2} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesFriday2} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesFriday2} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursBreakFriday} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesBreakFriday} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesBreakFriday} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangePriceFriday} placeholder="00$" />
                             </td>
                             <td className="px-6 py-4">
-                                {totalHours} : {totalMinutes}
+                                {totalHoursFriday} : {totalMinutesFriday}
                             </td>
                             <td className="px-6 py-4">
-                                {totalAmount}
+                                {totalAmountFriday}
                             </td>
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -529,29 +601,27 @@ function Table() {
                             <td className="px-6 py-4">
                                 <div className="h-[100%] w-[100%] flex justify-center items-center">
                                     <input onChange={handleChangeHoursSaturday} className="w-8" placeholder="00" />
-                                    <input onChange={handleChangeMinutesSaturday} min={0} type='number' max={59} className="w-8" placeholder="00" />
+                                    <input onChange={handleChangeMinutesSaturday} min={0} type="number" max={59} className="w-8" placeholder="00" />
                                 </div>
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursSaturday2} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesSaturday2} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesSaturday2} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursBreakSaturday} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesBreakSaturday} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesBreakSaturday} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangePriceSaturday} placeholder="00$" />
                             </td>
                             <td className="px-6 py-4">
-                                {totalHours} : {totalMinutes}
+                                {totalHoursSaturday} : {totalMinutesSaturday}
                             </td>
                             <td className="px-6 py-4">
-                                {totalAmount}
+                                {totalAmountSaturday}
                             </td>
                         </tr>
-
-
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 Sunday
@@ -559,37 +629,48 @@ function Table() {
                             <td className="px-6 py-4">
                                 <div className="h-[100%] w-[100%] flex justify-center items-center">
                                     <input onChange={handleChangeHoursSunday} className="w-8" placeholder="00" />
-                                    <input onChange={handleChangeMinutesSunday} min={0} type='number' max={59} className="w-8" placeholder="00" />
+                                    <input onChange={handleChangeMinutesSunday} min={0} type="number" max={59} className="w-8" placeholder="00" />
                                 </div>
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursSunday2} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesSunday2} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesSunday2} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangeHoursBreakSunday} placeholder="00" />
-                                <input className="w-8" onChange={handleChangeMinutesBreakSunday} min={0} type='number' max={59} placeholder="00" />
+                                <input className="w-8" onChange={handleChangeMinutesBreakSunday} min={0} type="number" max={59} placeholder="00" />
                             </td>
                             <td className="px-6 py-4">
                                 <input className="w-8" onChange={handleChangePriceSunday} placeholder="00$" />
                             </td>
                             <td className="px-6 py-4">
-                                {totalHours} : {totalMinutes}
+                                {totalHoursSunday} : {totalMinutesSunday}
                             </td>
                             <td className="px-6 py-4">
-                                {totalAmount}
+                                {totalAmountSunday}
                             </td>
                         </tr>
-
-
-
-
-
                     </tbody>
                 </table>
             </div>
         </div>
+
     );
 }
 
 export default Table;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
