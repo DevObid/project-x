@@ -181,160 +181,7 @@ function Table() {
 
                                     </div>
                                 </div>
-                                {/* <div className="flex flex-col px-6 pt-5 pb-6 border-b border-gray-100">
-                                    <div className="flex items-center justify-between">
-                                        <button className="flex items-center justify-center p-2 rounded-xl hover:bg-gray-50">
-                                            <svg className="w-6 h-6 text-gray-900 stroke-current" fill="none">
-                                                <path
-                                                    d="M13.25 8.75L9.75 12l3.5 3.25"
-                                                    strokeWidth="1.5"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </button> */}
-                                {/* <div className="text-sm font-semibold">March</div>
-                                        <button className="flex items-center justify-center p-2 rounded-xl hover:bg-gray-50">
-                                            <svg className="w-6 h-6 text-gray-900 stroke-current" fill="none">
-                                                <path
-                                                    d="M10.75 8.75l3.5 3.25-3.5 3.25"
-                                                    strokeWidth="1.5"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div className="grid grid-cols-7 text-xs text-center text-gray-900">
-                                        <span className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
-                                            Mo
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
-                                            Tu
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
-                                            We
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
-                                            Th
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
-                                            Fri
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
-                                            Sa
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
-                                            Su
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-blue-600 rounded-none rounded-tl-lg bg-gray-50">
-                                            1
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-blue-600 rounded-none bg-gray-50">
-                                            2
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-blue-600 rounded-none bg-gray-50">
-                                            3
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-blue-600 rounded-none bg-gray-50">
-                                            4
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-blue-600 rounded-none bg-gray-50">
-                                            5
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-blue-600 rounded-none bg-gray-50">
-                                            6
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-blue-600 rounded-none bg-gray-50">
-                                            7
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-blue-600 rounded-none rounded-bl-lg bg-gray-50">
-                                            8
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-blue-600 rounded-none bg-gray-50">
-                                            9
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-blue-600 rounded-none bg-gray-50">
-                                            10
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-white bg-blue-600 rounded-r-lg">
-                                            11
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            12
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            13
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            14
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            15
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            16
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            17
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            18
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            19
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            20
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            21
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            22
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            23
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            24
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            25
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            26
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            27
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            28
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            29
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            30
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-lg">
-                                            31
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
-                                            1
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
-                                            2
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
-                                            3
-                                        </span>
-                                        <span className="flex items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
-                                            4
-                                        </span> */}
-                                {/* </div>
-                        </div>
-                    </div> */}
+
                                 <div className="flex items-center justify-between px-6 py-4 mb-60">
 
                                     <div className="justify-center flex items-center ">
@@ -353,11 +200,11 @@ function Table() {
 
 
 
-                                        <div className="mt-2 p-5 w-25 h-11 rounded-l-lg  shadow-xl justify-center items-center text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium">
+                                        <div className="mt-2 p-5 w-25 h-11 rounded-l-lg  shadow-xl flex justify-center items-center text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium">
                                             <div className="flex justify-center items-center">
                                                 <select
                                                     name="hours"
-                                                    className="bg-transparent text-xl appearance-none outline-none"
+                                                    className="bg-transparent text-xl  appearance-none outline-none"
                                                 >
                                                     <option className="rounded-lg gap-3" value={1}>1</option>
                                                     <option value={2}>2</option>
@@ -389,6 +236,7 @@ function Table() {
                                                 </select>
                                             </div>
                                         </div>
+
                                         <svg className="w-6 mt-5 h-6 text-gray-900 stroke-current" fill="none">
                                             <path
                                                 d="M10.75 8.75l3.5 3.25-3.5 3.25"
@@ -406,7 +254,7 @@ function Table() {
                                             />
                                         </svg>
 
-                                        <div className="mt-2 h-11 p-5 w-25 left-6 rounded-r-lg  shadow-xl justify-center items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium">
+                                        <div className="mt-2 h-11 p-5 w-25 left-6 rounded-r-lg flex shadow-xl justify-center items-center text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium">
                                             <div className="flex">
                                                 <select
                                                     name="hours"
@@ -454,8 +302,24 @@ function Table() {
                                                 strokeLinejoin="round"
                                             />
                                         </svg>
+
+
                                     </div>
+                                    <div className="absolute top-[300px]  w-[400px] flex-block justify-start items-center mt-5">
+                                        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rate</label>
+                                        <input type="number" class="bg-gray-50 border w-28 h-8 border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$00" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+                                    </div>
+
                                 </div>
+
+
+                                <a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                                    <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                                </a>
+
+
                             </div>
                         </div>
                     </div>
