@@ -3,13 +3,14 @@ import Login from './Login/Login';
 import Table from './Tbale/Table';
 import Sidebar from './Sidebar/Sidebar';
 import Navigate from './Nvigationbar/Navigate';
+import Output from './Show-Output/Output';
 
 function App() {
 
 
   return (
     <div>
-      <Table />
+      <Output />
       <Navigate />
       <Sidebar />
 
