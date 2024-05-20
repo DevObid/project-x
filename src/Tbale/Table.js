@@ -335,66 +335,126 @@ function Table() {
                                 {/* </div>
                         </div>
                     </div> */}
-                                <div className="flex items-center justify-between px-6 py-4">
-                                    <svg className="w-6 h-6 text-gray-900 stroke-current" fill="none">
-                                        <path
-                                            d="M13.25 8.75L9.75 12l3.5 3.25"
-                                            strokeWidth="1.5"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        />
-                                    </svg>
+                                <div className="flex items-center justify-between px-6 py-4 mb-60">
+
+                                    <div className="justify-center flex items-center ">
+
+                                        <svg className="w-6 h-6  mt-5  text-gray-900 stroke-current" fill="none">
+                                            <path
+                                                d="M13.25 8.75L9.75 12l3.5 3.25"
+                                                strokeWidth="1.5"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                        </svg>
 
 
-                                    {/* component */}
-                                    <div className="mt-2 p-5 w-40 bg-white rounded-lg shadow-xl justify-center items-center">
-                                        <div className="flex">
-                                            <select
-                                                name="hours"
-                                                className="bg-transparent text-xl appearance-none outline-none"
-                                            >
-                                                <option value={1}>1</option>
-                                                <option value={2}>2</option>
-                                                <option value={3}>3</option>
-                                                <option value={4}>4</option>
-                                                <option value={5}>5</option>
-                                                <option value={6}>6</option>
-                                                <option value={7}>7</option>
-                                                <option value={8}>8</option>
-                                                <option value={9}>9</option>
-                                                <option value={10}>10</option>
-                                                <option value={11}>10</option>
-                                                <option value={12}>12</option>
-                                            </select>
-                                            <span className="text-xl mr-3">:</span>
-                                            <select
-                                                name="minutes"
-                                                className="bg-transparent text-xl appearance-none outline-none mr-4"
-                                            >
-                                                <option value={0}>30</option>
-                                                <option value={30}>30</option>
-                                            </select>
-                                            <select
-                                                name="ampm"
-                                                className="bg-transparent text-xl appearance-none outline-none border-spacing-0"
-                                            >
-                                                <option value="am">AM</option>
-                                                <option value="pm">PM</option>
-                                            </select>
+
+
+
+
+                                        <div className="mt-2 p-5 w-25 h-11 rounded-l-lg  shadow-xl justify-center items-center text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium">
+                                            <div className="flex justify-center items-center">
+                                                <select
+                                                    name="hours"
+                                                    className="bg-transparent text-xl appearance-none outline-none"
+                                                >
+                                                    <option className="rounded-lg gap-3" value={1}>1</option>
+                                                    <option value={2}>2</option>
+                                                    <option value={3}>3</option>
+                                                    <option value={4}>4</option>
+                                                    <option value={5}>5</option>
+                                                    <option value={6}>6</option>
+                                                    <option value={7}>7</option>
+                                                    <option value={8}>8</option>
+                                                    <option value={9}>9</option>
+                                                    <option value={10}>10</option>
+                                                    <option value={11}>10</option>
+                                                    <option value={12}>12</option>
+                                                </select>
+                                                <span className="text-xl mr-3">:</span>
+                                                <select
+                                                    name="minutes"
+                                                    className="bg-transparent text-xl appearance-none outline-none mr-4"
+                                                >
+                                                    <option value={0}>30</option>
+                                                    <option value={30}>30</option>
+                                                </select>
+                                                <select
+                                                    name="ampm"
+                                                    className="bg-transparent text-xl appearance-none outline-none border-spacing-0"
+                                                >
+                                                    <option value="am">AM</option>
+                                                    <option value="pm">PM</option>
+                                                </select>
+                                            </div>
                                         </div>
+                                        <svg className="w-6 mt-5 h-6 text-gray-900 stroke-current" fill="none">
+                                            <path
+                                                d="M10.75 8.75l3.5 3.25-3.5 3.25"
+                                                strokeWidth="1.5"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                        </svg>
+                                        <svg className="w-6  mt-5   h-6 text-gray-900 stroke-current" fill="none">
+                                            <path
+                                                d="M13.25 8.75L9.75 12l3.5 3.25"
+                                                strokeWidth="1.5"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                        </svg>
+
+                                        <div className="mt-2 h-11 p-5 w-25 left-6 rounded-r-lg  shadow-xl justify-center items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium">
+                                            <div className="flex">
+                                                <select
+                                                    name="hours"
+                                                    className="bg-transparent text-xl appearance-none outline-none"
+                                                >
+                                                    <option className="rounded-lg gap-3" value={1}>1</option>
+                                                    <option value={2}>2</option>
+                                                    <option value={3}>3</option>
+                                                    <option value={4}>4</option>
+                                                    <option value={5}>5</option>
+                                                    <option value={6}>6</option>
+                                                    <option value={7}>7</option>
+                                                    <option value={8}>8</option>
+                                                    <option value={9}>9</option>
+                                                    <option value={10}>10</option>
+                                                    <option value={11}>10</option>
+                                                    <option value={12}>12</option>
+                                                </select>
+                                                <span className="text-xl mr-3">:</span>
+                                                <select
+                                                    name="minutes"
+                                                    className="bg-transparent text-xl appearance-none outline-none mr-4"
+                                                >
+                                                    <option value={0}>30</option>
+                                                    <option value={30}>30</option>
+                                                </select>
+                                                <select
+                                                    name="ampm"
+                                                    className="bg-transparent text-xl appearance-none outline-none border-spacing-0"
+                                                >
+                                                    <option value="am">AM</option>
+                                                    <option value="pm">PM</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <svg className="w-6   mt-5  h-6 text-gray-900 stroke-current" fill="none">
+                                            <path
+                                                d="M10.75 8.75l3.5 3.25-3.5 3.25"
+                                                strokeWidth="1.5"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                        </svg>
                                     </div>
-
-
-
-
-                                    <svg className="w-6 h-6 text-gray-900 stroke-current" fill="none">
-                                        <path
-                                            d="M10.75 8.75l3.5 3.25-3.5 3.25"
-                                            strokeWidth="1.5"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        />
-                                    </svg>
                                 </div>
                             </div>
                         </div>
