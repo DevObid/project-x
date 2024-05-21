@@ -2,48 +2,16 @@
 import React from 'react';
 import ChartComponent from './ChartComponent';
 
-import React from 'react';
-import { Bar } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
-
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
-
 
 function Output() {
-    const ChartComponent = () => {
-        const data = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-            datasets: [
-                {
-                    label: 'Leads Generated',
-                    data: [300, 500, 400, 600, 700, 800],
-                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                },
-            ],
-        };
 
-        const options = {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'top',
-                },
-                title: {
-                    display: true,
-                    text: 'Leads Generated Per Month',
-                },
-            },
-        };
-
-        return <Bar data={data} options={options} />;
-    };
     return (
         <div>
 
-            <div className="absolute left-[260px] w-[900px] top-[200px]">
-                <div className="max-w-sm bg-white rounded-lg shadow w-[900px] dark:bg-gray-800 p-4 md:p-6">
+            <div className=" absolute left-[260px] w-[400px]  top-[200px]">
+                <div className="  rounded-lg shadow w-[1000px]  dark:bg-gray-800 p-4 md:p-6">
                     {/* Existing content */}
-                    <div className="flex justify-between pb-4 mb-4 border-b border-gray-200 dark:border-gray-700">
+                    <div className="flex justify-between pb-4 mb-4 border-b   border-gray-200 dark:border-gray-700">
                         <div className="flex items-center">
                             <div className="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center me-3">
                                 <svg className="w-6 h-6 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 19">
@@ -53,7 +21,7 @@ function Output() {
                             </div>
                             <div>
                                 <h5 className="leading-none text-2xl font-bold text-gray-900 dark:text-white pb-1">3.4k</h5>
-                                <p className="text-sm font-normal text-gray-500 dark:text-gray-400">Leads generated per week</p>
+                                <p className="text-sm font-normal text-gray-500 dark:text-gray-400">Revunue</p>
                             </div>
                         </div>
                         <div>
@@ -65,20 +33,11 @@ function Output() {
                             </span>
                         </div>
                     </div>
-                    <div className="grid grid-cols-2">
-                        <dl className="flex items-center">
-                            <dt className="text-gray-500 dark:text-gray-400 text-sm font-normal me-1">Money spent:</dt>
-                            <dd className="text-gray-900 text-sm dark:text-white font-semibold">$3,232</dd>
-                        </dl>
-                        <dl className="flex items-center justify-end">
-                            <dt className="text-gray-500 dark:text-gray-400 text-sm font-normal me-1">Conversion rate:</dt>
-                            <dd className="text-gray-900 text-sm dark:text-white font-semibold">1.2%</dd>
-                        </dl>
-                    </div>
-                    <div id="column-chart">
+
+                    <div className="" id="column-chart">
                         <ChartComponent />
                     </div>
-                    <div className="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+                    <div className="grid grid-cols-1 hitems-center border-gray-200 border-t h-[100%] w-[100%] dark:border-gray-700 justify-between">
                         <div className="flex justify-between items-center pt-5">
                             {/* Button */}
                             <button id="dropdownDefaultButton" data-dropdown-toggle="lastDaysdropdown" data-dropdown-placement="bottom" className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white" type="button">
