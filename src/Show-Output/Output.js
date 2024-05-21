@@ -77,7 +77,59 @@ function Output() {
                 </div>
             </div>
 
+
+            <div className=" mt-[800px] ml-72 mb-56 absolute overflow-x-auto shadow-md sm:rounded-lg">
+                <table style={{ backgroundColor: '#1A56DB' }} className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead style={{ backgroundColor: '#1A56DB' }} className="text-xs text-white  uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr style={{ backgroundColor: '#1A56DB' }}>
+                            <th scope="col" className="px-6 py-3">
+                                day
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                details
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <th
+                                scope="row"
+                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                            >
+                                MONDAY
+                            </th>
+                            <td className="px-6 py-4 text-sm font-medium"> start at 8.30 am and end 8.30</td>
+
+                        </tr>
+                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <th
+                                scope="row"
+                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                            >
+                                Microsoft Surface Pro
+                            </th>
+                            <td className="px-6 py-4">White</td>
+
+                        </tr>
+                        <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <th
+                                scope="row"
+                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                            >
+                                Magic Mouse 2
+                            </th>
+                            <td className="px-6 py-4">Black</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
         </div>
+
     )
 }
 
