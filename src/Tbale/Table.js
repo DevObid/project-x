@@ -8,66 +8,13 @@ function Table() {
 
 
 
-    function ConevrtMonthsMenis() {
 
 
-        setCounterPlus(counterPlus - 1)
+    useEffect(() => {
 
-        console.log(counterPlus - 1)
-
-        switch (counterPlus - 1) {
-            case 1:
-                setMonth("January");
-                break;
-            case 2:
-                setMonth("February");
-                break;
-            case 3:
-                setMonth("March");
-                break;
-            case 4:
-                setMonth("April");
-                break;
-            case 5:
-                setMonth("May");
-                break;
-            case 6:
-                setMonth("June");
-                break;
-            case 7:
-                setMonth("July");
-                break;
-            case 8:
-                setMonth("August");
-                break;
-            case 9:
-                setMonth("September");
-                break;
-            case 10:
-                setMonth("October");
-                break;
-            case 11:
-                setMonth("November");
-                break;
-            case 12:
-                setMonth("December");
-                break;
-            default:
-                setMonth("January");
-                break;
-        }
-
-
-
-
-
-    }
-
-    function ConevrtMonthsPlus() {
-
-        setCounterPlus(counterPlus + 1)
 
         console.log(counterPlus)
+
         switch (counterPlus) {
             case 1:
                 setMonth("January");
@@ -112,17 +59,13 @@ function Table() {
 
 
 
-    }
 
 
 
+    }, [counterPlus])
 
 
 
-
-
-
-    // create list if clikc on convert get moth w ra month
     return (
         <div className="absolute left-64 top-20">
             <div className="w-[1250px] h-72">
@@ -135,7 +78,7 @@ function Table() {
                             <div className="flex divide-x">
                                 <div className="flex flex-col px-6 pt-5 pb-6 border-b border-gray-100">
                                     <div className="flex items-center justify-between">
-                                        <button onClick={ConevrtMonthsMenis} className="flex items-center justify-center p-2 rounded-xl hover:bg-gray-50">
+                                        <button onClick={() => { counterPlus <= 1 ? console.log("larg") : setCounterPlus(counterPlus - 1) }} className="flex items-center justify-center p-2 rounded-xl hover:bg-gray-50">
                                             <svg className="w-6 h-6 text-gray-900 stroke-current" fill="none">
                                                 <path
                                                     d="M13.25 8.75L9.75 12l3.5 3.25"
@@ -147,7 +90,9 @@ function Table() {
                                         </button>
                                         <div className="text-sm font-semibold">{month}</div>
 
-                                        <button onClick={ConevrtMonthsPlus} className="flex items-center justify-center p-2 rounded-xl hover:bg-gray-50">
+                                        <button onClick={() => {
+                                            counterPlus >= 13 ? console.log("larg") : setCounterPlus(counterPlus + 1)
+                                        }} className="flex items-center justify-center p-2 rounded-xl hover:bg-gray-50">
                                             <svg className="w-6 h-6 text-gray-900 stroke-current" fill="none">
                                                 <path
                                                     d="M10.75 8.75l3.5 3.25-3.5 3.25"
