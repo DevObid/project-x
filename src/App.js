@@ -10,11 +10,9 @@ function App() {
 
   return (
     <div>
-      <Output />
+      <Table />
       <Navigate />
       <Sidebar />
-
-
     </div>
   );
 }

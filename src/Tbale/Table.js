@@ -1,11 +1,128 @@
-import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { FaRegCalendarAlt } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
 
 function Table() {
-    const [startDate, setStartDate] = useState(new Date());
 
+    const [month, setMonth] = useState();
+
+    const [counterPlus, setCounterPlus] = useState(1)
+
+
+
+    function ConevrtMonthsMenis() {
+
+
+        setCounterPlus(counterPlus - 1)
+
+        console.log(counterPlus - 1)
+
+        switch (counterPlus - 1) {
+            case 1:
+                setMonth("January");
+                break;
+            case 2:
+                setMonth("February");
+                break;
+            case 3:
+                setMonth("March");
+                break;
+            case 4:
+                setMonth("April");
+                break;
+            case 5:
+                setMonth("May");
+                break;
+            case 6:
+                setMonth("June");
+                break;
+            case 7:
+                setMonth("July");
+                break;
+            case 8:
+                setMonth("August");
+                break;
+            case 9:
+                setMonth("September");
+                break;
+            case 10:
+                setMonth("October");
+                break;
+            case 11:
+                setMonth("November");
+                break;
+            case 12:
+                setMonth("December");
+                break;
+            default:
+                setMonth("January");
+                break;
+        }
+
+
+
+
+
+    }
+
+    function ConevrtMonthsPlus() {
+
+        setCounterPlus(counterPlus + 1)
+
+        console.log(counterPlus)
+        switch (counterPlus) {
+            case 1:
+                setMonth("January");
+                break;
+            case 2:
+                setMonth("February");
+                break;
+            case 3:
+                setMonth("March");
+                break;
+            case 4:
+                setMonth("April");
+                break;
+            case 5:
+                setMonth("May");
+                break;
+            case 6:
+                setMonth("June");
+                break;
+            case 7:
+                setMonth("July");
+                break;
+            case 8:
+                setMonth("August");
+                break;
+            case 9:
+                setMonth("September");
+                break;
+            case 10:
+                setMonth("October");
+                break;
+            case 11:
+                setMonth("November");
+                break;
+            case 12:
+                setMonth("December");
+                break;
+            default:
+                setMonth("January");
+                break;
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+    // create list if clikc on convert get moth w ra month
     return (
         <div className="absolute left-64 top-20">
             <div className="w-[1250px] h-72">
@@ -18,7 +135,7 @@ function Table() {
                             <div className="flex divide-x">
                                 <div className="flex flex-col px-6 pt-5 pb-6 border-b border-gray-100">
                                     <div className="flex items-center justify-between">
-                                        <button className="flex items-center justify-center p-2 rounded-xl hover:bg-gray-50">
+                                        <button onClick={ConevrtMonthsMenis} className="flex items-center justify-center p-2 rounded-xl hover:bg-gray-50">
                                             <svg className="w-6 h-6 text-gray-900 stroke-current" fill="none">
                                                 <path
                                                     d="M13.25 8.75L9.75 12l3.5 3.25"
@@ -28,8 +145,9 @@ function Table() {
                                                 />
                                             </svg>
                                         </button>
-                                        <div className="text-sm font-semibold">February</div>
-                                        <button className="flex items-center justify-center p-2 rounded-xl hover:bg-gray-50">
+                                        <div className="text-sm font-semibold">{month}</div>
+
+                                        <button onClick={ConevrtMonthsPlus} className="flex items-center justify-center p-2 rounded-xl hover:bg-gray-50">
                                             <svg className="w-6 h-6 text-gray-900 stroke-current" fill="none">
                                                 <path
                                                     d="M10.75 8.75l3.5 3.25-3.5 3.25"
@@ -39,6 +157,8 @@ function Table() {
                                                 />
                                             </svg>
                                         </button>
+
+
                                     </div>
                                     <div className="grid grid-cols-7 text-xs text-center text-gray-900">
                                         <span className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
