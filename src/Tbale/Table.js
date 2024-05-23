@@ -12,8 +12,32 @@ function Table() {
 
     const [Days, setDays] = useState("")
 
+    const [selectedValue, setSelectedValue] = useState('am');
+
+    const [Hour1, setHour1] = useState(1)
+
+    const [Menit, setMenit] = useState(1)
+
+    const [Hour2, setHour2] = useState(1)
+
+    const [Menit2, setMenit2] = useState(1)
 
 
+
+
+    const handleChange = (event) => {
+        setSelectedValue(event.target.value);
+    };
+
+    const handleHour = (event) => {
+        setHour1(event.target.value)
+        setHour2(event.target.value)
+    };
+
+    const handleMenite = (event) => {
+        setMenit(event.target.value)
+        setMenit2(event.target.value)
+    };
 
 
 
@@ -271,33 +295,25 @@ function Table() {
 
                                         <div className="mt-2 p-5 w-25 h-11 rounded-l-lg  shadow-xl flex justify-center items-center text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium">
                                             <div className="flex justify-center items-center">
-                                                <select
+                                                <input
+                                                    placeholder='00'
                                                     name="hours"
-                                                    className="bg-transparent text-xl  appearance-none outline-none"
-                                                >
-                                                    <option className="rounded-lg gap-3" value={1}>1</option>
-                                                    <option value={2}>2</option>
-                                                    <option value={3}>3</option>
-                                                    <option value={4}>4</option>
-                                                    <option value={5}>5</option>
-                                                    <option value={6}>6</option>
-                                                    <option value={7}>7</option>
-                                                    <option value={8}>8</option>
-                                                    <option value={9}>9</option>
-                                                    <option value={10}>10</option>
-                                                    <option value={11}>10</option>
-                                                    <option value={12}>12</option>
-                                                </select>
+                                                    onChange={handleHour}
+                                                    className="bg-transparent w-6 text-xl appearance-none outline-none"
+                                                />
+
+
                                                 <span className="text-xl mr-3">:</span>
-                                                <select
+                                                <input
+                                                    placeholder='00'
                                                     name="minutes"
-                                                    className="bg-transparent text-xl appearance-none outline-none mr-4"
-                                                >
-                                                    <option value={0}>30</option>
-                                                    <option value={30}>30</option>
-                                                </select>
+                                                    onChange={handleMenite}
+                                                    className="bg-transparent text-xl w-6 appearance-none outline-none mr-4"
+                                                />
                                                 <select
                                                     name="ampm"
+                                                    value={selectedValue}
+                                                    onChange={handleChange}
                                                     className="bg-transparent text-xl appearance-none outline-none border-spacing-0"
                                                 >
                                                     <option value="am">AM</option>
@@ -325,31 +341,22 @@ function Table() {
 
                                         <div className="mt-2 h-11 p-5 w-25 left-6 rounded-r-lg flex shadow-xl justify-center items-center text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium">
                                             <div className="flex">
-                                                <select
+                                                <input
+                                                    placeholder='00'
                                                     name="hours"
-                                                    className="bg-transparent text-xl appearance-none outline-none"
-                                                >
-                                                    <option className="rounded-lg gap-3" value={1}>1</option>
-                                                    <option value={2}>2</option>
-                                                    <option value={3}>3</option>
-                                                    <option value={4}>4</option>
-                                                    <option value={5}>5</option>
-                                                    <option value={6}>6</option>
-                                                    <option value={7}>7</option>
-                                                    <option value={8}>8</option>
-                                                    <option value={9}>9</option>
-                                                    <option value={10}>10</option>
-                                                    <option value={11}>10</option>
-                                                    <option value={12}>12</option>
-                                                </select>
+                                                    onChange={handleHour}
+                                                    className="bg-transparent w-6 text-xl appearance-none outline-none"
+                                                />
+
+
                                                 <span className="text-xl mr-3">:</span>
-                                                <select
+                                                <input
+                                                    placeholder='00'
                                                     name="minutes"
-                                                    className="bg-transparent text-xl appearance-none outline-none mr-4"
-                                                >
-                                                    <option value={0}>30</option>
-                                                    <option value={30}>30</option>
-                                                </select>
+                                                    onChange={handleMenite}
+                                                    className="bg-transparent text-xl w-6 appearance-none outline-none mr-4"
+                                                />
+
                                                 <select
                                                     name="ampm"
                                                     className="bg-transparent text-xl appearance-none outline-none border-spacing-0"
@@ -375,12 +382,12 @@ function Table() {
 
                                     </div>
                                     <div className="absolute top-[300px]  w-[400px] flex-block justify-start items-center mt-5">
-                                        <label for="phone" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rate</label>
+                                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rate</label>
                                         <input ref={RefRate} type="number" className="bg-gray-50 border w-28 h-8 border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$00" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
                                     </div>
-                                    <div class="mb-6 mt-40 absolute">
+                                    <div className="mb-6 mt-40 absolute">
 
-                                        <label for="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Memo</label>
+                                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Memo</label>
                                         <textarea ref={RefMemo} id="message" rows="4" className="block p-2.5 w-[400px] h-[100px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
 
                                     </div>
