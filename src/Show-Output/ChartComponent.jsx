@@ -1,14 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext } from 'react';
 import Chart from 'react-apexcharts';
+import { ContextShart } from './Output';
 
 const ChartComponent = () => {
+    const data = useContext(ContextShart)
+    console.log(data)
     const options = {
         colors: ["#1A56DB", "#FDBA8C"],
         series: [
             {
                 name: "AM",
                 data: [
-                    { x: "Mon", y: 231 },
+                    { x: "Mon", y: data },
                     { x: "Tue", y: 122 },
                     { x: "Wed", y: 63 },
                     { x: "Thu", y: 421 },
