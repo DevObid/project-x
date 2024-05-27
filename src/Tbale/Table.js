@@ -12,7 +12,9 @@ function Table() {
 
     const [Days, setDays] = useState("")
 
-    const [selectedValue, setSelectedValue] = useState('am');
+    const [selectedValueAMPM, setSelectedValueAMPM] = useState('AM');
+    const [selectedValuePMAM, setSelectedValuePMAM] = useState('PM');
+
 
     const [Hour1, setHour1] = useState(1)
 
@@ -25,13 +27,31 @@ function Table() {
 
 
 
-    const handleChange = (event) => {
-        setSelectedValue(event.target.value);
+    const handleChangeAMPM1 = (value) => {
+
+        setSelectedValueAMPM(value);
     };
 
-    const handleHour = (event) => {
+
+    const handleChangeAMPM2 = (event) => {
+        setSelectedValuePMAM(event);
+    };
+
+
+
+
+    const handleHour1 = (event) => {
         setHour1(event.target.value)
+
+
+
+    };
+
+    const handleHour2 = (event) => {
         setHour2(event.target.value)
+
+
+
     };
 
     const handleMenite = (event) => {
@@ -101,6 +121,15 @@ function Table() {
     };
 
 
+
+    useEffect(() => {
+
+
+        console.log(selectedValueAMPM)
+        console.log(selectedValuePMAM)
+
+
+    }, [Hour1, Hour2, selectedValuePMAM, selectedValuePMAM])
 
 
 
@@ -298,7 +327,7 @@ function Table() {
                                                 <input
                                                     placeholder='00'
                                                     name="hours"
-                                                    onChange={handleHour}
+                                                    onChange={handleHour1}
                                                     className="bg-transparent w-6 text-xl appearance-none outline-none"
                                                 />
 
@@ -312,8 +341,8 @@ function Table() {
                                                 />
                                                 <select
                                                     name="ampm"
-                                                    value={selectedValue}
-                                                    onChange={handleChange}
+                                                    value={selectedValueAMPM}
+                                                    onChange={(e) => handleChangeAMPM1(e.target.value)}
                                                     className="bg-transparent text-xl appearance-none outline-none border-spacing-0"
                                                 >
                                                     <option value="am">AM</option>
@@ -344,7 +373,7 @@ function Table() {
                                                 <input
                                                     placeholder='00'
                                                     name="hours"
-                                                    onChange={handleHour}
+                                                    onChange={handleHour2}
                                                     className="bg-transparent w-6 text-xl appearance-none outline-none"
                                                 />
 
@@ -359,6 +388,8 @@ function Table() {
 
                                                 <select
                                                     name="ampm"
+                                                    onChange={(e) => handleChangeAMPM2(e.target.value)}
+
                                                     className="bg-transparent text-xl appearance-none outline-none border-spacing-0"
                                                 >
                                                     <option value="am">AM</option>

@@ -4,32 +4,32 @@ import { ContextShart } from './Output';
 
 const ChartComponent = () => {
     const data = useContext(ContextShart)
-    console.log(data)
+
     const options = {
         colors: ["#1A56DB", "#FDBA8C"],
         series: [
             {
                 name: "AM",
                 data: [
-                    { x: "Mon", y: data },
-                    { x: "Tue", y: 122 },
-                    { x: "Wed", y: 63 },
-                    { x: "Thu", y: 421 },
-                    { x: "Fri", y: 122 },
-                    { x: "Sat", y: 323 },
-                    { x: "Sun", y: 111 },
+                    { x: "Mon", y: data.MondayAM },
+                    { x: "Tue", y: data.TuesdayAM },
+                    { x: "Wed", y: data.WednesdayAM },
+                    { x: "Thu", y: data.ThursdayAM },
+                    { x: "Fri", y: data.FridayAM },
+                    { x: "Sat", y: data.SaturdayAM },
+                    { x: "Sun", y: data.SundayAM },
                 ],
             },
             {
                 name: "PM",
                 data: [
-                    { x: "Mon", y: 232 },
-                    { x: "Tue", y: 113 },
-                    { x: "Wed", y: 341 },
-                    { x: "Thu", y: 224 },
-                    { x: "Fri", y: 522 },
-                    { x: "Sat", y: 411 },
-                    { x: "Sun", y: 243 },
+                    { x: "Mon", y: data.MondayPM },
+                    { x: "Tue", y: data.TuesdayPM },
+                    { x: "Wed", y: data.WednesdayPM },
+                    { x: "Thu", y: data.ThursdayPM },
+                    { x: "Fri", y: data.FridayPM },
+                    { x: "Sat", y: data.SaturdayPM },
+                    { x: "Sun", y: data.SundayPM },
                 ],
             },
         ],

@@ -1,11 +1,13 @@
 // MainComponent.js
+
+// create subdropdown menu
 import { React, useRef, useState, createContext } from 'react';
 import ChartComponent from './ChartComponent';
 export const ContextShart = createContext();
 
 function Output() {
-    // kola nhar ndir lik two state AM AND pm
-    const [chartData, setChartData] = useState(null);
+
+
 
     const [MondayAM, setMondayAM] = useState(null);
     const [MondayPM, setMondayPM] = useState(null);
@@ -28,41 +30,73 @@ function Output() {
     const [SundayAM, setSundayAM] = useState(null);
     const [SundayPM, setSundayPM] = useState(null);
 
-
-    // PUSH THIS STATES TO OPJECT 
-
-    const states = { MondayAM: MondayAM, MondayPM: MondayPM }
+    const [Porentege, setPorentege] = useState(null);
 
 
+    const Calculatepercentage = () => {
+        const percentage = MondayAM + MondayPM + TuesdayAM + TuesdayPM + WednesdayAM + WednesdayPM + ThursdayAM + ThursdayPM + FridayAM + FridayPM + SaturdayAM + SaturdayPM + SundayAM + SundayPM
+        console.log(percentage)
+        const resulte = percentage / 168 * 100
+        setPorentege(resulte)
 
-    const HnadlSHart = () => {
-
-        setMondayAM(800);
-        setMondayPM(700);
 
 
     }
 
+    const HnadlSHart = () => {
+
+        setMondayAM(4);
+        setMondayPM(3);
+
+        setTuesdayAM(6);
+        setTuesdayPM(4);
+
+        setWednesdayAM(6);
+        setWednesdayPM(7);
+
+        setThursdayAM(6);
+        setThursdayPM(1);
+
+        setFridayAM(7);
+        setFridayPM(6);
+
+        setSaturdayAM(9);
+        setSaturdayPM(3);
+
+        setSundayAM(5);
+        setSundayPM(4);
+
+
+    }
+
+    const RefSub = useRef();
+    const handleConvertToSub = () => {
+
+        RefSub.current.classList.toggle('hidden');
+
+
+    };
 
     const RefShowDropDown = useRef()
 
-    const RefMars = useRef();
 
-    // when i clikc on 7days  chart give me all days 
-    // handfuntion 
+
+
     const ShowDropDown = () => {
         if (RefShowDropDown.current) {
 
             RefShowDropDown.current.classList.toggle('hidden');
         }
+        Calculatepercentage()
     };
     return (
-        <ContextShart.Provider value={chartData}>
+        <ContextShart.Provider value={{ MondayAM, MondayPM, TuesdayAM, TuesdayPM, WednesdayAM, WednesdayPM, ThursdayAM, ThursdayPM, FridayAM, FridayPM, SaturdayAM, SaturdayPM, SundayAM, SundayPM }
+        }>
             <div>
 
                 <div className=" absolute   left-[260px] w-[400px]  top-[200px]">
                     <div className="   rounded-lg shadow w-[1000px]  dark:bg-gray-800 p-4 md:p-6">
-                        {/* Existing content */}
+
                         <div className="flex justify-between pb-4 mb-4 border-b   border-gray-200 dark:border-gray-700">
                             <div className="flex items-center">
                                 <div className="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center me-3">
@@ -81,7 +115,7 @@ function Output() {
                                     <svg className="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
                                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13V1m0 0L1 5m4-4 4 4" />
                                     </svg>
-                                    42.5%
+                                    {Porentege + "%"}
                                 </span>
                             </div>
                         </div>
@@ -121,7 +155,7 @@ function Output() {
                                     <div
                                         ref={RefShowDropDown}
                                         id="dropdownToggle"
-                                        className="z-10 visible  bg-white divide-y divide-gray-100 rounded-lg shadow w-40 dark:bg-gray-700 dark:divide-gray-600"
+                                        className="z-10 visible   bg-white divide-y divide-gray-100 rounded-lg shadow w-40 dark:bg-gray-700 dark:divide-gray-600"
                                     >
                                         <ul
 
@@ -141,28 +175,23 @@ function Output() {
                                                 </div>
                                             </li>
                                             <li>
-                                                <div ref={RefMars} className="flex p-2 z-10	 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                                                    <label className="inline-flex items-center w-full cursor-pointer">
-                                                        <input type="checkbox" defaultValue="" className="sr-only peer" />
-                                                        <div className="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full rtl:peer-checked:after:translate-x-[-100%] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-500 peer-checked:bg-blue-600" />
-                                                        <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-                                                            Mars
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </li>
 
-
-
-                                            <li>
                                                 <button
+
                                                     id="doubleDropdownButton"
                                                     data-dropdown-toggle="doubleDropdown"
                                                     data-dropdown-placement="right-start"
                                                     type="button"
+                                                    onClick={handleConvertToSub}
                                                     className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                                                 >
-                                                    may
+                                                    {/* <div className="flex justify-center items-center bg-orange-300 "> */}
+                                                    <input type="checkbox" defaultValue="" className="sr-only peer" />
+                                                    <div className=" absolute w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full rtl:peer-checked:after:translate-x-[-100%] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-500 peer-checked:bg-blue-600" />
+                                                    <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
+                                                        dropdown
+                                                    </span>
+                                                    {/* </div> */}
                                                     <svg
                                                         className="w-2.5 h-2.5 ms-3 rtl:rotate-180"
                                                         aria-hidden="true"
@@ -181,17 +210,12 @@ function Output() {
                                                 </button>
                                                 <div
                                                     id="doubleDropdown"
-                                                    className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                                                    ref={RefSub}
+                                                    className="z-10 visible  absolute ml-40 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
                                                 >
-                                                    <label className="inline-flex items-center w-full cursor-pointer">
-                                                        <input type="checkbox" defaultValue="" className="sr-only peer" />
-                                                        <div className="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full rtl:peer-checked:after:translate-x-[-100%] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-500 peer-checked:bg-blue-600" />
-                                                        <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-                                                            Mars
-                                                        </span>
-                                                    </label>
                                                     <ul
-                                                        className="py-2 text-sm text-gray-700 dark:text-gray-200"
+
+                                                        className="py-2  text-sm text-gray-700 dark:text-gray-200"
                                                         aria-labelledby="doubleDropdownButton"
                                                     >
                                                         <li>
@@ -199,11 +223,33 @@ function Output() {
                                                                 href="#"
                                                                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                                                             >
-                                                                Overview
+                                                                One Week
                                                             </a>
                                                         </li>
-
-
+                                                        <li>
+                                                            <a
+                                                                href="#"
+                                                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                            >
+                                                                Scend Week
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a
+                                                                href="#"
+                                                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                            >
+                                                                Billing
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a
+                                                                href="#"
+                                                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                            >
+                                                                Rewards
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </li>
@@ -231,58 +277,58 @@ function Output() {
                 </div>
 
 
-                {/* <div className=" mt-[800px] ml-72 mb-56 absolute overflow-x-auto shadow-md sm:rounded-lg">
-                <table style={{ backgroundColor: '#1A56DB' }} className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                    <thead style={{ backgroundColor: '#1A56DB' }} className="text-xs text-white  uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr style={{ backgroundColor: '#1A56DB' }}>
-                            <th scope="col" className="px-6 py-3">
-                                day
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                details
-                            </th>
+                <div className=" mt-[800px] ml-72 mb-56 absolute overflow-x-auto shadow-md sm:rounded-lg">
+                    <table style={{ backgroundColor: '#1A56DB' }} className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead style={{ backgroundColor: '#1A56DB' }} className="text-xs text-white  uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr style={{ backgroundColor: '#1A56DB' }}>
+                                <th scope="col" className="px-6 py-3">
+                                    day
+                                </th>
+                                <th scope="col" className="px-6 py-3">
+                                    details
+                                </th>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                            <th
-                                scope="row"
-                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                            >
-                                MONDAY
-                            </th>
-                            <td className="px-6 py-4 text-sm font-medium"> start at 8.30 am and end 8.30</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <th
+                                    scope="row"
+                                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                                >
+                                    MONDAY
+                                </th>
+                                <td className="px-6 py-4 text-sm font-medium"> start at 8.30 am and end 8.30</td>
 
-                        </tr>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                            <th
-                                scope="row"
-                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                            >
-                                Microsoft Surface Pro
-                            </th>
-                            <td className="px-6 py-4">White</td>
+                            </tr>
+                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <th
+                                    scope="row"
+                                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                                >
+                                    Microsoft Surface Pro
+                                </th>
+                                <td className="px-6 py-4">White</td>
 
-                        </tr>
-                        <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-                            <th
-                                scope="row"
-                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                            >
-                                Magic Mouse 2
-                            </th>
-                            <td className="px-6 py-4">Black</td>
+                            </tr>
+                            <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <th
+                                    scope="row"
+                                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                                >
+                                    Magic Mouse 2
+                                </th>
+                                <td className="px-6 py-4">Black</td>
 
-                        </tr>
-                    </tbody>
-                </table>
-            </div> */}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
 
 
             </div>
-        </ContextShart.Provider>
+        </ContextShart.Provider >
 
     )
 }
