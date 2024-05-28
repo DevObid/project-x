@@ -3,7 +3,7 @@ import Chart from 'react-apexcharts';
 import { ContextShart } from './Output';
 
 const ChartComponent = () => {
-    const data = useContext(ContextShart)
+    // const data = useContext(ContextShart)
 
     const options = {
         colors: ["#1A56DB", "#FDBA8C"],
@@ -11,25 +11,25 @@ const ChartComponent = () => {
             {
                 name: "AM",
                 data: [
-                    { x: "Mon", y: data.MondayAM },
-                    { x: "Tue", y: data.TuesdayAM },
-                    { x: "Wed", y: data.WednesdayAM },
-                    { x: "Thu", y: data.ThursdayAM },
-                    { x: "Fri", y: data.FridayAM },
-                    { x: "Sat", y: data.SaturdayAM },
-                    { x: "Sun", y: data.SundayAM },
+                    { x: "Mon", y: 10 },
+                    { x: "Tue", y: 10 },
+                    { x: "Wed", y: 10 },
+                    { x: "Thu", y: 4 },
+                    { x: "Fri", y: 7 },
+                    { x: "Sat", y: 7 },
+                    { x: "Sun", y: 7 },
                 ],
             },
             {
                 name: "PM",
                 data: [
-                    { x: "Mon", y: data.MondayPM },
-                    { x: "Tue", y: data.TuesdayPM },
-                    { x: "Wed", y: data.WednesdayPM },
-                    { x: "Thu", y: data.ThursdayPM },
-                    { x: "Fri", y: data.FridayPM },
-                    { x: "Sat", y: data.SaturdayPM },
-                    { x: "Sun", y: data.SundayPM },
+                    { x: "Mon", y: 8 },
+                    { x: "Tue", y: 9 },
+                    { x: "Wed", y: 5 },
+                    { x: "Thu", y: 5 },
+                    { x: "Fri", y: 5 },
+                    { x: "Sat", y: 6 },
+                    { x: "Sun", y: 3 },
                 ],
             },
         ],

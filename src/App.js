@@ -6,6 +6,7 @@ import Navigate from './Nvigationbar/Navigate';
 import Output from './Show-Output/Output';
 import ContextAp from './Context/ContextAp';
 import { createContext } from 'react';
+
 export const Context = createContext()
 
 function App() {
