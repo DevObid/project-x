@@ -13,13 +13,15 @@ function Table() {
 
     const [counterPlus, setCounterPlus] = useState(1)
 
+    const [day, setday] = useState('')
+
     const RefRate = useRef()
 
     const RefMemo = useRef()
 
     const [days, setdays] = useState();
-    const [selectedValueAMPM1, setSelectedValueAMPM1] = useState('');
-    const [selectedValuePMAM2, setSelectedValuePMAM2] = useState('');
+    const [selectedValueAMPM1, setSelectedValueAMPM1] = useState('AM');
+    const [selectedValuePMAM2, setSelectedValuePMAM2] = useState('AM');
 
 
     const [Hour1, setHour1] = useState(1)
@@ -30,17 +32,20 @@ function Table() {
 
     const [Menit2, setMenit2] = useState(1)
 
-
+    // mni tmchi data nmchi lchhar wn bochiha fih 
 
     const SendJsonData = () => {
 
-        setsenddata({ selectedValueAMPM1, selectedValuePMAM2, Hour1, Hour2, Menit, Menit2, month, days })
 
         console.log(senddata)
 
-
-
     }
+
+    useEffect(() => {
+        setsenddata({ selectedValueAMPM1, selectedValuePMAM2, Hour1, Hour2, Menit, Menit2, month, days, day })
+
+
+    }, [selectedValueAMPM1, selectedValuePMAM2, Hour1, Hour2, Menit, Menit2, month, days, day])
 
     const handleChangeAMPM1 = (value) => {
 
@@ -51,6 +56,7 @@ function Table() {
     const handleChangeAMPM2 = (event) => {
         setSelectedValuePMAM2(event);
     };
+
 
 
 
@@ -127,7 +133,7 @@ function Table() {
     }, [counterPlus])
 
     const handleDays = (days) => {
-        console.log(days);
+        setday(days);
     };
 
 
@@ -139,21 +145,14 @@ function Table() {
 
 
 
-    useEffect(() => {
 
-
-        console.log(selectedValueAMPM1)
-        console.log(selectedValuePMAM2)
-
-
-    }, [Hour1, Hour2, selectedValueAMPM1, selectedValuePMAM2])
 
 
 
 
 
     return (
-        <Contexttable.Provider value={{ senddata }} >
+        <Contexttable.Provider value={senddata} >
 
             <Output />
             <div className="absolute left-64 top-20">

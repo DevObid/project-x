@@ -6,21 +6,19 @@ import Navigate from './Nvigationbar/Navigate';
 import Output from './Show-Output/Output';
 import ContextAp from './Context/ContextAp';
 import { createContext } from 'react';
+import ApiTwo from './Context/ApiTwo';
+import ApiThree from './Context/ApiThree';
 
-export const Context = createContext()
+
+
 
 function App() {
 
   return (
     <div>
-      <Output />
+      <Table />
       <Navigate />
       <Sidebar />
-
-      {/* <Context.Provider value={"ans"}>
-        <ContextAp />
-
-      </Context.Provider> */}
 
     </div>
   );

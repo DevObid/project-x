@@ -1,14 +1,12 @@
 import React from 'react'
 import { useContext } from 'react'
-import ContextAp from './ContextAp'
-import { Context } from '../App'
-
+import { Data } from './ApiThree'
 
 
 function ApiTwo() {
-    const Data = useContext(Context)
+    const ata = useContext(Data)
     return (
-        <div>{Data}</div>
+        <div>{console.log(ata)}</div>
     )
 }
 

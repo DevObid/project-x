@@ -3,7 +3,7 @@ import Chart from 'react-apexcharts';
 import { ContextShart } from './Output';
 
 const ChartComponent = () => {
-    // const data = useContext(ContextShart)
+    const data = useContext(ContextShart)
 
     const options = {
         colors: ["#1A56DB", "#FDBA8C"],
@@ -12,7 +12,7 @@ const ChartComponent = () => {
                 name: "AM",
                 data: [
                     { x: "Mon", y: 10 },
-                    { x: "Tue", y: 10 },
+                    { x: "Tue", y: 20 },
                     { x: "Wed", y: 10 },
                     { x: "Thu", y: 4 },
                     { x: "Fri", y: 7 },
@@ -23,8 +23,8 @@ const ChartComponent = () => {
             {
                 name: "PM",
                 data: [
-                    { x: "Mon", y: 8 },
-                    { x: "Tue", y: 9 },
+                    { x: "Mon", y: 30 },
+                    { x: "Tue", y: 40 },
                     { x: "Wed", y: 5 },
                     { x: "Thu", y: 5 },
                     { x: "Fri", y: 5 },
