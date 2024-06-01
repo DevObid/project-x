@@ -6,9 +6,9 @@ import Table from '../Tbale/Table';
 export const ContextShart = createContext();
 
 
-// mni nakhd data nmchi lchhar wn bochiha f chhar li katb deja hna 
+// db njib hours li dakhlo w nhthom ka parame 
 
-// stock data wmn dak stock request li jat nmchi lchhar wnjib data li fih 
+// 
 
 
 
@@ -40,14 +40,16 @@ function Output() {
         setSundayAM(5);
         setSundayPM(4);
 
-        calculateWorkHours('8 AM', '2 PM')
+        ConvertInputHoursToString()
 
 
     }
 
 
 
-    function calculateWorkHours(startTime, endTime) {
+    const ConvertInputHoursToString = () => {
+
+
 
         const StockData = {
 
@@ -130,79 +132,72 @@ function Output() {
 
             }
 
-
-
         }
+        const timeRanges = [
+            [`${StockData.Junry.oneweek.Mon.hour1 + " " + StockData.Junry.oneweek.Mon.ampm1}`, `${StockData.Junry.oneweek.Mon.hour2 + " " + StockData.Junry.oneweek.Mon.ampm2}`]
 
-        // Verify inputs are strings
-        if (typeof startTime !== 'string' || typeof endTime !== 'string') {
-            throw new Error('Both startTime and endTime must be strings.');
-        }
+        ];
 
-        // Parse the input times
-        let [startHourStr, startPeriod] = startTime.split(' ');
-        let [endHourStr, endPeriod] = endTime.split(' ');
+        calculateWorkHours(timeRanges);
 
-        if (!startHourStr || !startPeriod || !endHourStr || !endPeriod) {
-            throw new Error('Invalid time format. Expected format is "8 AM" or "2 PM".');
-        }
 
-        let startHour = parseInt(startHourStr.split(':')[0]);
-        let endHour = parseInt(endHourStr.split(':')[0]);
 
-        if (isNaN(startHour) || isNaN(endHour)) {
-            throw new Error('Invalid hour format. Hours must be numbers.');
-        }
 
-        // Convert times to 24-hour format for easier calculations
-        if (startPeriod.toUpperCase() === 'PM' && startHour !== 12) startHour += 12;
-        if (startPeriod.toUpperCase() === 'AM' && startHour === 12) startHour = 0;
-        if (endPeriod.toUpperCase() === 'PM' && endHour !== 12) endHour += 12;
-        if (endPeriod.toUpperCase() === 'AM' && endHour === 12) endHour = 0;
 
-        // Calculate total hours worked
-        let totalHours = endHour - startHour;
-        if (totalHours < 0) totalHours += 24;
+    }
 
-        // Calculate AM and PM hours
+
+    const calculateWorkHours = (timeRanges) => {
         let amHours = 0;
         let pmHours = 0;
 
-        for (let hour = startHour; hour !== endHour; hour = (hour + 1) % 24) {
-            if (hour < 12) {
+        timeRanges.forEach(range => {
+            let [startTime, endTime] = range;
+
+            // Parse the input times
+            let [startHourStr, startPeriod] = startTime.split(" ");
+            let [endHourStr, endPeriod] = endTime.split(" ");
+
+            let startHour = parseInt(startHourStr.split(':')[0]);
+            let endHour = parseInt(endHourStr.split(':')[0]);
+
+            // Convert times to 24-hour format for easier calculations
+            if (startPeriod.toUpperCase() === 'PM' && startHour !== 12) startHour += 12;
+            if (startPeriod.toUpperCase() === 'AM' && startHour === 12) startHour = 0;
+            if (endPeriod.toUpperCase() === 'PM' && endHour !== 12) endHour += 12;
+            if (endPeriod.toUpperCase() === 'AM' && endHour === 12) endHour = 0;
+
+            // Calculate total hours worked
+            let totalHours = endHour - startHour;
+            if (totalHours < 0) totalHours += 24;
+
+            // Calculate AM and PM hours
+            for (let hour = startHour; hour !== endHour; hour = (hour + 1) % 24) {
+                if (hour < 12) {
+                    amHours++;
+                } else {
+                    pmHours++;
+                }
+            }
+
+            // Adjust if the end hour is within the working hours
+            if (endHour < 12) {
                 amHours++;
             } else {
                 pmHours++;
             }
-        }
+        });
 
-        // Adjust if the end hour is within the working hours
-        if (endHour < 12) {
-            amHours++;
-        } else {
-            pmHours++;
-        }
-
-        return { amHours, pmHours };
-    }
+        console.log(`AM hours: ${amHours}, PM hours: ${pmHours}`);
+    };
 
     // Example usage:
-    try {
-        let result = calculateWorkHours('8 AM', '2 PM');
-        console.log(`AM hours: ${result.amHours}, PM hours: ${result.pmHours}`);
-    } catch (error) {
-        console.error(error.message);
-    }
 
-    // khasni nch chaal jani f am w chaal jani pm matalan ila 10 am to 5 pm 
-    // nhdd chaal mn sa3a kena f am w pm 
-    // matalan il a3andi 10 pm to 10 pm 
 
-    // am mn 12 lil l 12 nhar
 
-    // pm 12 dhr l 12 li      
 
-    // 8 pm 41 pm    mn 8 tal 12  4 hou am  .  mn 12 tal 14 3 swe3 pm
+
+
 
 
 
@@ -527,8 +522,8 @@ function Output() {
         </ContextShart.Provider >
 
     )
-}
 
+}
 export default Output
 
 
