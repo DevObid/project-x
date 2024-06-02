@@ -12,7 +12,7 @@ const ChartComponent = () => {
                 name: "AM",
                 data: [
                     { x: "Mon", y: data.MondayAM },
-                    { x: "Tue", y: data.MondayPM },
+                    { x: "Tue", y: data.TuesdayAM },
                     { x: "Wed", y: 10 },
                     { x: "Thu", y: 4 },
                     { x: "Fri", y: 7 },
@@ -23,8 +23,8 @@ const ChartComponent = () => {
             {
                 name: "PM",
                 data: [
-                    { x: "Mon", y: 30 },
-                    { x: "Tue", y: 40 },
+                    { x: "Mon", y: data.MondayPM },
+                    { x: "Tue", y: data.TuesdayPM },
                     { x: "Wed", y: 5 },
                     { x: "Thu", y: 5 },
                     { x: "Fri", y: 5 },

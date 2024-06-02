@@ -22,8 +22,7 @@ function Output() {
         setMondayAM(9)
         setMondayPM(6)
 
-        setTuesdayAM(10);
-        setTuesdayPM(70);
+
 
         setWednesdayAM(6);
         setWednesdayPM(7);
@@ -40,14 +39,32 @@ function Output() {
         setSundayAM(5);
         setSundayPM(4);
 
-        ConvertInputHoursToString()
+        ConvertInputHoursToCalculate()
 
 
     }
 
+    const StockData = {
 
+        Junry: {
+            oneweek: {
+                Days: {
+                    monthe: conte.month,
+                    day: conte.day,
+                    days: conte.days,
+                    ampm1: conte.selectedValueAMPM1,
+                    ampm2: conte.selectedValuePMAM2,
+                    hour1: conte.Hour1,
+                    hour2: conte.Hour2,
+                    Mu1: conte.Menit,
+                    Mu2: conte.Menit2
+                },
+            }
+        }
 
-    const ConvertInputHoursToString = () => {
+    }
+
+    const ConvertInputHoursToCalculate = () => {
 
 
 
@@ -55,70 +72,7 @@ function Output() {
 
             Junry: {
                 oneweek: {
-                    Mon: {
-                        monthe: conte.month,
-                        day: conte.day,
-                        days: conte.days,
-                        ampm1: conte.selectedValueAMPM1,
-                        ampm2: conte.selectedValuePMAM2,
-                        hour1: conte.Hour1,
-                        hour2: conte.Hour2,
-                    },
-                    Tus: {
-                        monthe: conte.month,
-                        day: conte.day,
-                        days: conte.days,
-                        ampm1: conte.selectedValueAMPM1,
-                        ampm2: conte.selectedValuePMAM2,
-                        hour1: conte.Hour1,
-                        hour2: conte.Hour2,
-                    },
-                    We: {
-                        monthe: conte.month,
-                        day: conte.day,
-                        days: conte.days,
-                        ampm1: conte.selectedValueAMPM1,
-                        ampm2: conte.selectedValuePMAM2,
-                        hour1: conte.Hour1,
-                        hour2: conte.Hour2,
-                    },
-                    Thur: {
-                        monthe: conte.month,
-                        day: conte.day,
-                        days: conte.days,
-                        ampm1: conte.selectedValueAMPM1,
-                        ampm2: conte.selectedValuePMAM2,
-                        hour1: conte.Hour1,
-                        hour2: conte.Hour2,
-                    },
-                    Fri: {
-                        monthe: conte.month,
-                        day: conte.day,
-                        days: conte.days,
-                        ampm1: conte.selectedValueAMPM1,
-                        ampm2: conte.selectedValuePMAM2,
-                        hour1: conte.Hour1,
-                        hour2: conte.Hour2,
-                    },
-                    Satu: {
-                        monthe: conte.month,
-                        day: conte.day,
-                        days: conte.days,
-                        ampm1: conte.selectedValueAMPM1,
-                        ampm2: conte.selectedValuePMAM2,
-                        hour1: conte.Hour1,
-                        hour2: conte.Hour2,
-                    },
-                    Su: {
-                        monthe: conte.month,
-                        day: conte.day,
-                        days: conte.days,
-                        ampm1: conte.selectedValueAMPM1,
-                        ampm2: conte.selectedValuePMAM2,
-                        hour1: conte.Hour1,
-                        hour2: conte.Hour2,
-                    },
-                    Tus: {
+                    Days: {
                         monthe: conte.month,
                         day: conte.day,
                         days: conte.days,
@@ -128,24 +82,56 @@ function Output() {
                         hour2: conte.Hour2,
                     },
                 }
-
-
             }
 
         }
         const timeRanges = [
-            [`${StockData.Junry.oneweek.Mon.hour1 + " " + StockData.Junry.oneweek.Mon.ampm1}`, `${StockData.Junry.oneweek.Mon.hour2 + " " + StockData.Junry.oneweek.Mon.ampm2}`]
+            [`${StockData.Junry.oneweek.Days.hour1 + " " + StockData.Junry.oneweek.Days.ampm1}`, `${StockData.Junry.oneweek.Days.hour2 + " " + StockData.Junry.oneweek.Days.ampm2}`]
 
         ];
 
         calculateWorkHours(timeRanges);
 
-
-
+        sendatatochart();
 
 
     }
 
+    const sendatatochart = () => {
+
+        const StockData = {
+
+            Junry: {
+                oneweek: {
+                    Days: {
+                        monthe: conte.month,
+                        day: conte.day,
+                        days: conte.days,
+                        ampm1: conte.selectedValueAMPM1,
+                        ampm2: conte.selectedValuePMAM2,
+                        hour1: conte.Hour1,
+                        hour2: conte.Hour2,
+                    },
+                }
+            }
+
+        }
+
+
+        if (StockData.Junry.oneweek.Days.day === "Tuesday") {
+            setTuesdayAM(DatHourAm)
+            setTuesdayPM(DatHourPm)
+            console.log("yes")
+        }
+
+        console.log(DatHourAm)
+        console.log(DatHourPm)
+
+
+
+    }
+    let DatHourAm = null;
+    let DatHourPm = null;
 
     const calculateWorkHours = (timeRanges) => {
         let amHours = 0;
@@ -187,26 +173,12 @@ function Output() {
                 pmHours++;
             }
         });
+        DatHourAm = amHours
+        DatHourPm = pmHours
 
-        console.log(`AM hours: ${amHours}, PM hours: ${pmHours}`);
     };
 
-    // Example usage:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // if kant had data Tusday sift data l tusday 
 
     const [MondayAM, setMondayAM] = useState(null);
     const [MondayPM, setMondayPM] = useState(null);
@@ -446,12 +418,6 @@ function Output() {
                                             </li>
 
 
-
-
-
-
-
-
                                         </ul>
                                     </div>
 
@@ -489,7 +455,7 @@ function Output() {
                                 >
                                     MONDAY
                                 </th>
-                                <td className="px-6 py-4 text-sm font-medium"> start at 8.30 am and end 8.30</td>
+                                <td className="px-6 py-4 text-sm font-medium"> start at {StockData.Junry.oneweek.Days.hour1} : {StockData.Junry.oneweek.Days.Mu1}  am and end {StockData.Junry.oneweek.Days.hour2} : {StockData.Junry.oneweek.Days.Mu2} </td>
 
                             </tr>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
