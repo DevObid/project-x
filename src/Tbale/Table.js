@@ -154,11 +154,10 @@ function Table() {
     return (
         <Contexttable.Provider value={senddata} >
 
-
-            <div className="absolute left-64 top-20">
-                <div className="w-[1250px] h-72">
-                    <div className="flex items-center justify-center w-full min-h-screen bg-gray-50">
-                        <div className="flex bg-white shadow-lg rounded-xl">
+            <div className="absolute  w-full items-center justify-center flex  ">
+                <div className="w-full flex items-center justify-center  ">
+                    <div className="flex items-center justify-center w-full  h-screen ml-60 ">
+                        <div className="flex bg-white  shadow-lg rounded-xl">
                             <div className="py-6 border-r border-gray-100">
 
                             </div>
@@ -458,6 +457,7 @@ function Table() {
                     </div >
                 </div >
             </div >
+
         </Contexttable.Provider>
 
 
