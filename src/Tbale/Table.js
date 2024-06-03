@@ -9,17 +9,17 @@ function Table() {
     const [senddata, setsenddata] = useState()
 
 
-    const [month, setMonth] = useState();
+    const [month, setMonth] = useState("tes");
 
     const [counterPlus, setCounterPlus] = useState(1)
 
-    const [day, setday] = useState('')
+    const [day, setday] = useState('dd')
 
     const RefRate = useRef()
 
     const RefMemo = useRef()
 
-    const [days, setdays] = useState();
+    const [days, setdays] = useState("aa");
     const [selectedValueAMPM1, setSelectedValueAMPM1] = useState('AM');
     const [selectedValuePMAM2, setSelectedValuePMAM2] = useState('AM');
 
@@ -154,7 +154,7 @@ function Table() {
     return (
         <Contexttable.Provider value={senddata} >
 
-            <Output />
+
             <div className="absolute left-64 top-20">
                 <div className="w-[1250px] h-72">
                     <div className="flex items-center justify-center w-full min-h-screen bg-gray-50">

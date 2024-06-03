@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div>
-      <Table />
+      {/* <Table /> */}
       <Navigate />
       <Sidebar />
 

@@ -2,16 +2,8 @@
 import { React, useRef, useState, createContext, useContext } from 'react';
 import ChartComponent from './ChartComponent';
 import { Contexttable } from '../Tbale/Table';
-import Table from '../Tbale/Table';
+
 export const ContextShart = createContext();
-
-
-// db njib hours li dakhlo w nhthom ka parame 
-
-// 
-
-
-
 
 
 function Output() {
@@ -65,7 +57,6 @@ function Output() {
     }
 
     const ConvertInputHoursToCalculate = () => {
-
 
 
         const StockData = {
@@ -428,6 +419,7 @@ function Output() {
                                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m1 9 4-4-4-4" />
                                     </svg>
                                 </a>
+
                             </div>
                         </div>
                     </div>
