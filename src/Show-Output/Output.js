@@ -1,126 +1,127 @@
-
-import { React, useRef, useState, createContext, useContext } from 'react';
+import React, { useRef, useState, createContext, useContext } from 'react';
 import ChartComponent from './ChartComponent';
 import { Contexttable } from '../Tbale/Table';
-
-export const ContextShart = createContext();
-
+export const ContextShart = createContext()
 
 function Output() {
-    const conte = useContext(Contexttable)
+
+    const conte = useContext(Contexttable);
+
+
+
+    const [MondayAM, setMondayAM] = useState(null);
+    const [MondayPM, setMondayPM] = useState(null);
+    const [TuesdayAM, setTuesdayAM] = useState(null);
+    const [TuesdayPM, setTuesdayPM] = useState(null);
+    const [WednesdayAM, setWednesdayAM] = useState(null);
+    const [WednesdayPM, setWednesdayPM] = useState(null);
+    const [ThursdayAM, setThursdayAM] = useState(null);
+    const [ThursdayPM, setThursdayPM] = useState(null);
+    const [FridayAM, setFridayAM] = useState(null);
+    const [FridayPM, setFridayPM] = useState(null);
+    const [SaturdayAM, setSaturdayAM] = useState(null);
+    const [SaturdayPM, setSaturdayPM] = useState(null);
+    const [SundayAM, setSundayAM] = useState(null);
+    const [SundayPM, setSundayPM] = useState(null);
+    const [Porentege, setPorentege] = useState(null);
+
+    const RefSub = useRef();
+    const RefShowDropDown = useRef();
 
     const Oneweek = () => {
-
-        setMondayAM(9)
-        setMondayPM(6)
-
-
-
+        setMondayAM(9);
+        setMondayPM(6);
         setWednesdayAM(6);
         setWednesdayPM(7);
-
         setThursdayAM(6);
         setThursdayPM(1);
-
         setFridayAM(7);
         setFridayPM(6);
-
         setSaturdayAM(9);
         setSaturdayPM(3);
-
         setSundayAM(5);
         setSundayPM(4);
-
-        ConvertInputHoursToCalculate()
-
-
-    }
+        ConvertInputHoursToCalculate();
+    };
 
     const StockData = {
-
         Junry: {
             oneweek: {
                 Days: {
-                    monthe: conte.month,
-                    day: conte.day,
-                    days: conte.days,
-                    ampm1: conte.selectedValueAMPM1,
-                    ampm2: conte.selectedValuePMAM2,
-                    hour1: conte.Hour1,
-                    hour2: conte.Hour2,
-                    Mu1: conte.Menit,
-                    Mu2: conte.Menit2
+                    // monthe: conte.month,
+                    // day: conte.day,
+                    // days: conte.days,
+                    ampm1: "AM",
+                    ampm2: "PM",
+                    hour1: 8,
+                    hour2: 9,
+                    // Mu1: conte.Menit,
+                    // Mu2: conte.Menit2
                 },
             }
         }
-
-    }
+    };
 
     const ConvertInputHoursToCalculate = () => {
-
-
         const StockData = {
-
             Junry: {
                 oneweek: {
                     Days: {
-                        monthe: conte.month,
-                        day: conte.day,
-                        days: conte.days,
-                        ampm1: conte.selectedValueAMPM1,
-                        ampm2: conte.selectedValuePMAM2,
-                        hour1: conte.Hour1,
-                        hour2: conte.Hour2,
+                        // monthe: conte.month,
+                        // day: conte.day,
+                        // days: conte.days,
+                        // ampm1: conte.selectedValueAMPM1,
+                        // ampm2: conte.selectedValuePMAM2,
+                        // hour1: conte.Hour1,
+                        // hour2: conte.Hour2,
+
+                        ampm1: "AM",
+                        ampm2: "PM",
+                        hour1: 8,
+                        hour2: 9,
+                        // Mu1: conte.Menit,
+                        // Mu2: conte.Menit2
                     },
                 }
             }
-
-        }
+        };
         const timeRanges = [
             [`${StockData.Junry.oneweek.Days.hour1 + " " + StockData.Junry.oneweek.Days.ampm1}`, `${StockData.Junry.oneweek.Days.hour2 + " " + StockData.Junry.oneweek.Days.ampm2}`]
-
         ];
 
         calculateWorkHours(timeRanges);
-
         sendatatochart();
-
-
-    }
+    };
 
     const sendatatochart = () => {
-
         const StockData = {
-
             Junry: {
                 oneweek: {
                     Days: {
-                        monthe: conte.month,
-                        day: conte.day,
-                        days: conte.days,
-                        ampm1: conte.selectedValueAMPM1,
-                        ampm2: conte.selectedValuePMAM2,
-                        hour1: conte.Hour1,
-                        hour2: conte.Hour2,
+                        // monthe: conte.month,
+                        // day: conte.day,
+                        // days: conte.days,
+                        ampm1: "AM",
+                        ampm2: "PM",
+                        hour1: 8,
+                        hour2: 9,
+                        // Mu1: conte.Menit,
+                        // Mu2: conte.Menit2
                     },
                 }
             }
-
-        }
-
+        };
 
         if (StockData.Junry.oneweek.Days.day === "Tuesday") {
-            setTuesdayAM(DatHourAm)
-            setTuesdayPM(DatHourPm)
-            console.log("yes")
+            setTuesdayAM(DatHourAm);
+            setTuesdayPM(DatHourPm);
+            console.log("yes");
         }
 
-        console.log(DatHourAm)
-        console.log(DatHourPm)
+        console.log(DatHourAm);
+        console.log(DatHourPm);
+    };
 
-
-
-    }
     let DatHourAm = null;
     let DatHourPm = null;
 
@@ -164,91 +165,42 @@ function Output() {
                 pmHours++;
             }
         });
-        DatHourAm = amHours
-        DatHourPm = pmHours
-
+        DatHourAm = amHours;
+        DatHourPm = pmHours;
     };
-
-    // if kant had data Tusday sift data l tusday 
-
-    const [MondayAM, setMondayAM] = useState(null);
-    const [MondayPM, setMondayPM] = useState(null);
-
-    const [TuesdayAM, setTuesdayAM] = useState(null);
-    const [TuesdayPM, setTuesdayPM] = useState(null);
-
-    const [WednesdayAM, setWednesdayAM] = useState(null);
-    const [WednesdayPM, setWednesdayPM] = useState(null);
-
-    const [ThursdayAM, setThursdayAM] = useState(null);
-    const [ThursdayPM, setThursdayPM] = useState(null);
-
-    const [FridayAM, setFridayAM] = useState(null);
-    const [FridayPM, setFridayPM] = useState(null);
-
-    const [SaturdayAM, setSaturdayAM] = useState(null);
-    const [SaturdayPM, setSaturdayPM] = useState(null);
-
-    const [SundayAM, setSundayAM] = useState(null);
-    const [SundayPM, setSundayPM] = useState(null);
-
-    const [Porentege, setPorentege] = useState(null);
-
 
     const Calculatepercentage = () => {
-        const percentage = MondayAM + MondayPM + TuesdayAM + TuesdayPM + WednesdayAM + WednesdayPM + ThursdayAM + ThursdayPM + FridayAM + FridayPM + SaturdayAM + SaturdayPM + SundayAM + SundayPM
-
-        const resulte = percentage / 168 * 100
-        setPorentege(resulte)
-
-
-
-
-
-    }
-
-
-    const HnadlSHart = () => {
-
-
-
-
-
-
-
-    }
-
-    const RefSub = useRef();
-    const handleConvertToSub = () => {
-
-        RefSub.current.classList.toggle('hidden');
-
-
+        const percentage = MondayAM + MondayPM + TuesdayAM + TuesdayPM + WednesdayAM + WednesdayPM + ThursdayAM + ThursdayPM + FridayAM + FridayPM + SaturdayAM + SaturdayPM + SundayAM + SundayPM;
+        const result = percentage / 168 * 100;
+        setPorentege(result);
     };
 
-    const RefShowDropDown = useRef()
+    const HnadlSHart = () => {
+        // Your logic here
+    };
 
-
-
+    const handleConvertToSub = () => {
+        RefSub.current.classList.toggle('hidden');
+    };
 
     const ShowDropDown = () => {
         if (RefShowDropDown.current) {
-
             RefShowDropDown.current.classList.toggle('hidden');
         }
-        console.log(conte)
-        Calculatepercentage()
+        console.log(conte);
+        Calculatepercentage();
     };
+
 
     return (
         <ContextShart.Provider value={{ MondayAM, MondayPM, TuesdayAM, TuesdayPM, WednesdayAM, WednesdayPM, ThursdayAM, ThursdayPM, FridayAM, FridayPM, SaturdayAM, SaturdayPM, SundayAM, SundayPM }
         }>
-            <div>
+            <div  >
 
 
 
-                <div className=" absolute   left-[260px] w-[400px]  top-[900px]">
-                    <div className="   rounded-lg shadow w-[1000px]  dark:bg-gray-800 p-4 md:p-6">
+                <div className=" absolute   w-[calc(100%-255px)] left-[250px]  flex  top-[100px]">
+                    <div className="  bg-white  w-full rounded-lg shadow   dark:bg-gray-800 p-4 md:p-6">
 
                         <div className="flex justify-between pb-4 mb-4 border-b   border-gray-200 dark:border-gray-700">
                             <div className="flex items-center">
@@ -276,7 +228,7 @@ function Output() {
                         <div className="w-full" id="column-chart">
                             <ChartComponent />
                         </div>
-                        <div className="grid grid-cols-1 hitems-center border-gray-200 border-t h-[100%] w-[100%] dark:border-gray-700 justify-between">
+                        <div className="grid grid-cols-1 hitems-center border-gray-200 border-t  dark:border-gray-700 justify-between">
                             <div className="flex justify-between items-center pt-5">
 
                                 <div>
@@ -388,22 +340,7 @@ function Output() {
                                                                 Scend Week
                                                             </a>
                                                         </li>
-                                                        <li>
-                                                            <a
-                                                                href="#"
-                                                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                            >
-                                                                Billing
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="#"
-                                                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                            >
-                                                                Rewards
-                                                            </a>
-                                                        </li>
+
                                                     </ul>
                                                 </div>
                                             </li>
@@ -426,7 +363,7 @@ function Output() {
                 </div>
 
 
-                <div className=" mt-[800px] ml-72 mb-56 absolute overflow-x-auto shadow-md sm:rounded-lg">
+                {/* <div className=" mt-[800px] ml-72 mb-56 absolute overflow-x-auto shadow-md sm:rounded-lg">
                     <table style={{ backgroundColor: '#1A56DB' }} className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                         <thead style={{ backgroundColor: '#1A56DB' }} className="text-xs text-white  uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr style={{ backgroundColor: '#1A56DB' }}>
@@ -447,7 +384,7 @@ function Output() {
                                 >
                                     MONDAY
                                 </th>
-                                <td className="px-6 py-4 text-sm font-medium"> start at {StockData.Junry.oneweek.Days.hour1} : {StockData.Junry.oneweek.Days.Mu1}  am and end {StockData.Junry.oneweek.Days.hour2} : {StockData.Junry.oneweek.Days.Mu2} </td>
+                                <td className="px-6 py-4 text-sm font-medium"> start at  </td>
 
                             </tr>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -472,7 +409,7 @@ function Output() {
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div> */}
 
 
 

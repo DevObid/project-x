@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, createContext } from 'react';
 import Output from '../Show-Output/Output';
 
 
+
+
 export const Contexttable = createContext();
 
 function Table() {
@@ -13,13 +15,13 @@ function Table() {
 
     const [counterPlus, setCounterPlus] = useState(1)
 
-    const [day, setday] = useState('dd')
+    const [day, setday] = useState('MONDAY')
 
     const RefRate = useRef()
 
     const RefMemo = useRef()
 
-    const [days, setdays] = useState("aa");
+    const [days, setdays] = useState("11");
     const [selectedValueAMPM1, setSelectedValueAMPM1] = useState('AM');
     const [selectedValuePMAM2, setSelectedValuePMAM2] = useState('AM');
 
@@ -32,11 +34,12 @@ function Table() {
 
     const [Menit2, setMenit2] = useState(1)
 
-    // mni tmchi data nmchi lchhar wn bochiha fih 
+    // const [errors, seterror] = useState()
+
+
 
     const SendJsonData = () => {
-
-
+        // seterror(<Output />)
         console.log(senddata)
 
     }
@@ -144,15 +147,11 @@ function Table() {
     };
 
 
-
-
-
-
-
-
+    //
 
     return (
         <Contexttable.Provider value={senddata} >
+            {/* {errors} */}
 
             <div className="absolute  w-full items-center justify-center flex  ">
                 <div className="w-full flex items-center justify-center  ">

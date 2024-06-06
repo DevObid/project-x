@@ -2,52 +2,74 @@ import React from 'react';
 import logoImage from './logos.jpg';
 import Table from '../Tbale/Table';
 import Output from '../Show-Output/Output';
+import { useState } from 'react';
+import { Link, BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Colors } from 'chart.js';
 
 
 const Sidebar = () => {
-    const CovertToOutput = () => {
-        return <Output />
 
-    }
+
+
+
+
     return (
-        <div className="min-h-screen flex flex-row bg-gray-100">
-            <div className="flex flex-col h-screen w-56 dark:border-neutral-700 border bg-white rounded-r-xl mt-4 overflow-hidden">
-                <div className="flex items-center justify-start  h-20 mt-9  w-full ">
-                    <img className="h-44" src={logoImage} />
+
+        <BrowserRouter>
+            <Routes >
+                <Route path='/shart' element={<Output />} />
+                <Route path='/table' element={<Table />} />
+            </Routes>
+
+
+
+            <aside className="text-white w-[250px] pl-5 h-screen bg-gradient-to-br from-[#0048bd] to-[#44a7fd] rounded-tr-[80px]">
+                <p className="m-0 py-10">Menu</p>
+                <div className="flex items-center text-sm text-white gap-5 py-3 pl-8 no-underline hover:text-[#3f5efb] hover:bg-white hover:outline-none hover:relative hover:bg-white hover:rounded-tl-[20px] hover:rounded-bl-[20px]">
+                    <i className="fa-solid fa-house font text-lg	"></i>
+                    <a
+
+                        href="javascript:void(0)"
+                        style={{ position: 'relative' }}
+                    >
+
+                        Dashboard
+                    </a>
                 </div>
-                <ul className="flex h-screen  flex-col py-4 relative">
-                    <li>
-                        <a href="#" className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
-                            <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
-                                <i className="bx bx-home"></i>
-                            </span>
-                            <span className="text-sm font-medium">Dashboard</span>
-                        </a>
-                    </li>
-
-                    <li >
-                        <a onClick={CovertToOutput} href="#" className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
-                            <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
-                                <i className="bx bx-home"></i>
-                            </span>
-                            <span className="text-sm font-medium">Get Reports</span>
-                        </a>
-                    </li>
-
-
-
-
-                    <li className="absolute bottom-0 w-full">
-                        <a href="#" className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
-                            <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
-                                <i className="bx bx-log-out"></i>
-                            </span>
-                            <span className="text-sm font-medium">Logout</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+                <a
+                    href="javascript:void(0)"
+                    className="text-sm text-white block py-3 pl-8 no-underline hover:text-[#3f5efb] hover:bg-white hover:outline-none hover:relative hover:bg-white hover:rounded-tl-[20px] hover:rounded-bl-[20px]"
+                    style={{ position: 'relative' }}
+                >
+                    <i className="fa fa-laptop mr-1" aria-hidden="true"></i>
+                    Computers
+                </a>
+                <a
+                    href="javascript:void(0)"
+                    className="text-sm text-white block py-3 pl-8 no-underline hover:text-[#3f5efb] hover:bg-white hover:outline-none hover:relative hover:bg-white hover:rounded-tl-[20px] hover:rounded-bl-[20px]"
+                    style={{ position: 'relative' }}
+                >
+                    <i className="fa fa-clone mr-1" aria-hidden="true"></i>
+                    Shared with me
+                </a>
+                <a
+                    href="javascript:void(0)"
+                    className="text-sm text-white block py-3 pl-8 no-underline hover:text-[#3f5efb] hover:bg-white hover:outline-none hover:relative hover:bg-white hover:rounded-tl-[20px] hover:rounded-bl-[20px]"
+                    style={{ position: 'relative' }}
+                >
+                    <i className="fa fa-star-o mr-1" aria-hidden="true"></i>
+                    Starred
+                </a>
+                <a
+                    href="javascript:void(0)"
+                    className="text-sm text-white block py-3 pl-8 no-underline hover:text-[#3f5efb] hover:bg-white hover:outline-none hover:relative hover:bg-white hover:rounded-tl-[20px] hover:rounded-bl-[20px]"
+                    style={{ position: 'relative' }}
+                >
+                    <i className="fa fa-trash-o mr-1" aria-hidden="true"></i>
+                    Trash
+                </a>
+            </aside>
+        </BrowserRouter>
     );
 };
 

@@ -9,7 +9,7 @@ const Navigate = () => {
 
     return (
         <div >
-            <div className="fixed  left-60 top-5 h-16 right-0 items-center justify-center flex   bg-white border border-gray-200 shadow-sm rounded-xl p-4 md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+            <div className="absolute   w-[calc(100%-255px)] left-[250px] h-16 right-0 items-center justify-center flex   bg-white border border-gray-200 shadow-sm rounded-xl p-4 md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
 
 
                 <div className="flex  justify-end gap-16  items-center w-full  ">
