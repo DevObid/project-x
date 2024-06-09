@@ -6,24 +6,19 @@ import { useState } from 'react';
 import { Link, BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Colors } from 'chart.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faHome,
-    faChartBar,
-    faBell,
-    faChartPie,
-    faHeart,
-    faWallet,
-    faSignOutAlt,
-    faMoon,
-    faSun,
-    faSearch
-} from '@fortawesome/free-solid-svg-icons';
+
+import { useContext } from 'react';
+import { Darkcontext } from '../Nvigationbar/Navigate';
 
 
 const Sidebar = () => {
 
+    const Dark = useContext(Darkcontext)
 
 
+    const converttodarkmode = () => {
+        console.log(Dark.isDarkMode)
+    }
 
 
     return (
@@ -37,13 +32,8 @@ const Sidebar = () => {
 
 
 
-
-
-
-
-
             <div className="h-[100vh] ">
-                <nav className={`fixed top-0 left-0 h-[100vh] bg-white dark:bg-gray-800 p-3 transition-all duration-300 w-64`}>
+                <nav className={`fixed top-0 left-0 h-[100vh] bg-white  dark:bg-gray-800 p-3 transition-all duration-300 w-64`}>
                     <header className="relative flex items-center">
                         <div className="flex items-center">
                             <span className="mr-3">
@@ -81,27 +71,27 @@ const Sidebar = () => {
                             <li className="mb-2">
 
 
-                                <a href="#" className="flex gap-4 items-center p-2 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-200">
+                                <Link to="/shart" className="flex gap-4 items-center p-2 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-200">
                                     <i class="fa-solid fa-house"></i>
                                     <span>Dashboard</span>
 
-                                </a>
+                                </Link>
                             </li>
 
                             <li className="mb-2">
 
 
-                                <a href="#" className="flex gap-4 items-center p-2 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-200">
+                                <Link href="#" className="flex gap-4 items-center p-2 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-200">
                                     <i class="fa-solid fa-house"></i>
                                     <span>Table</span>
 
-                                </a>
+                                </Link>
                             </li>
 
-                            <li className="mb-2 absolute bottom-0">
+                            <li className="mb-2 absolute w-40 bottom-0">
 
 
-                                <a href="#" className="flex gap-4 items-center p-2 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-200">
+                                <a href="#" onClick={converttodarkmode} className="flex gap-4 items-center w-full p-2 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-200">
                                     <i class="fa-solid fa-house"></i>
                                     <span>Log-Out</span>
 

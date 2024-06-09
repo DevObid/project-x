@@ -198,7 +198,7 @@ function Output() {
 
 
                 <div className=" absolute   w-[calc(100%-290px)] left-[290px]  flex  top-[100px]">
-                    <div className="  bg-white  w-full rounded-lg shadow   dark:bg-gray-800 p-4 md:p-6">
+                    <div className=" bg-slate-950  w-full rounded-lg shadow   dark:bg-gray-800 p-4 md:p-6">
 
                         <div className="flex justify-between pb-4 mb-4 border-b   border-gray-200 dark:border-gray-700">
                             <div className="flex items-center">
