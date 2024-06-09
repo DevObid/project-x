@@ -9,15 +9,16 @@ const Navigate = () => {
 
     return (
         <div >
-            <div className="absolute   w-[calc(100%-255px)] left-[250px] h-16 right-0 items-center justify-center flex   bg-white border border-gray-200 shadow-sm rounded-xl p-4 md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+            <div className="w-[calc(100%)] mt-4 h-16 right-0  flex items-center justify-center    bg-white border border-gray-200 shadow-sm rounded-xl p-4 md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
 
 
-                <div className="flex  justify-end gap-16  items-center w-full  ">
+                <div className="flex justify-center  gap-16  items-center w-full  ">
+                    <img class="w-6 h-6 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" />
 
 
                     <button
                         type="button"
-                        className={`hs-dark-mode-active:${isDarkMode ? 'block' : 'hidden'} group h-9 w-9 justify-center flex items-center text-gray-600 hover:text-blue-600  dark:text-neutral-400 dark:hover:text-neutral-500 "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800  dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"`}
+                        className={`hs-dark-mode-active:${isDarkMode ? 'block' : 'hidden'} group h-9 w-9 justify-center flex items-center text-gray-600 hover:text-blue-600  dark:text-neutral-400 dark:hover:text-neutral-500 "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2  dark:bg-gray-800  dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"`}
                         onClick={toggleTheme}
                         data-hs-theme-click-value="light"
                     >
@@ -33,7 +34,6 @@ const Navigate = () => {
                             <path d="m19.07 4.93-1.41 1.41"></path>
                         </svg>
                     </button>
-                    <img class="w-6 h-6 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" />
                 </div>
             </div>
         </div>

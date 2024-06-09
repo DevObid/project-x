@@ -34,13 +34,12 @@ function Table() {
 
     const [Menit2, setMenit2] = useState(1)
 
-    // const [errors, seterror] = useState()
-
 
 
     const SendJsonData = () => {
-        // seterror(<Output />)
+
         console.log(senddata)
+
 
     }
 
@@ -49,6 +48,10 @@ function Table() {
 
 
     }, [selectedValueAMPM1, selectedValuePMAM2, Hour1, Hour2, Menit, Menit2, month, days, day])
+
+
+
+
 
     const handleChangeAMPM1 = (value) => {
 
@@ -147,11 +150,13 @@ function Table() {
     };
 
 
-    //
+
 
     return (
-        <Contexttable.Provider value={senddata} >
-            {/* {errors} */}
+        <Contexttable.Provider value={{ senddata }} >
+
+
+
 
             <div className="absolute  w-full items-center justify-center flex  ">
                 <div className="w-full flex items-center justify-center  ">

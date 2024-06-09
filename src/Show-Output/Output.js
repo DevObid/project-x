@@ -175,9 +175,7 @@ function Output() {
         setPorentege(result);
     };
 
-    const HnadlSHart = () => {
-        // Your logic here
-    };
+
 
     const handleConvertToSub = () => {
         RefSub.current.classList.toggle('hidden');
@@ -199,7 +197,7 @@ function Output() {
 
 
 
-                <div className=" absolute   w-[calc(100%-255px)] left-[250px]  flex  top-[100px]">
+                <div className=" absolute   w-[calc(100%-290px)] left-[290px]  flex  top-[100px]">
                     <div className="  bg-white  w-full rounded-lg shadow   dark:bg-gray-800 p-4 md:p-6">
 
                         <div className="flex justify-between pb-4 mb-4 border-b   border-gray-200 dark:border-gray-700">
@@ -231,12 +229,12 @@ function Output() {
                         <div className="grid grid-cols-1 hitems-center border-gray-200 border-t  dark:border-gray-700 justify-between">
                             <div className="flex justify-between items-center pt-5">
 
-                                <div>
+                                <div >
                                     <button
                                         onClick={ShowDropDown}
                                         id="dropdownToggleButton"
                                         data-dropdown-toggle="dropdownToggle"
-                                        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                        className="text-white w-44 rounded-t-lg justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium  text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                         type="button"
                                     >
                                         Dropdown toggle{" "}
@@ -257,31 +255,57 @@ function Output() {
                                         </svg>
                                     </button>
                                     {/* Dropdown menu */}
-                                    <div
-                                        ref={RefShowDropDown}
-                                        id="dropdownToggle"
-                                        className="z-10 visible   bg-white divide-y divide-gray-100 rounded-lg shadow w-40 dark:bg-gray-700 dark:divide-gray-600"
-                                    >
-                                        <ul
 
-                                            className="p-3 z-10	 space-y-1 text-sm  text-gray-700 dark:text-gray-200"
-                                            aria-labelledby="dropdownToggleButton"
+                                    <div >
+                                        <div
+                                            ref={RefShowDropDown}
+                                            id="dropdownToggle"
+                                            className="z-10 visible w-44 rounded-bl-lg flex h-14    bg-white divide-y divide-gray-100  shadow  dark:bg-gray-700 dark:divide-gray-600"
                                         >
-                                            <li>
-                                                <div onClick={HnadlSHart} className="flex z-10 	 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                                                    <label className="inline-flex items-center w-full cursor-pointer">
+                                            <ul
 
-                                                        <input type="checkbox" defaultValue="" className="sr-only peer" />
-                                                        <div className="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full rtl:peer-checked:after:translate-x-[-100%] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-500 peer-checked:bg-blue-600" />
-                                                        <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-                                                            last
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            <li>
+                                                className="p-3 z-10	 space-y-1 text-sm  text-gray-700 dark:text-gray-200"
+                                                aria-labelledby="dropdownToggleButton"
+                                            >
+                                                <li >
+                                                    <button onClick={handleConvertToSub}
+                                                        className="flex z-10 w-full 	 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                                                        <label className="inline-flex items-center w-full cursor-pointer">
 
-                                                <button
+                                                            <input onClick={handleConvertToSub} type="checkbox" defaultValue="" className="sr-only peer" />
+                                                            <div className="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full rtl:peer-checked:after:translate-x-[-100%] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-500 peer-checked:bg-blue-600" />
+                                                            <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
+                                                                last
+                                                            </span>
+                                                        </label>
+                                                    </button>
+                                                    <div
+                                                        id="doubleDropdown"
+                                                        ref={RefSub}
+                                                        className="z-10  visible  absolute ml-[164px] h-14  bottom-[80px] rounded-br-lg   bg-white divide-y divide-gray-100  shadow w-44 dark:bg-gray-700"
+                                                    >
+                                                        <ul
+
+                                                            className="py-2  text-sm text-gray-700 dark:text-gray-200"
+                                                            aria-labelledby="doubleDropdownButton"
+                                                        >
+                                                            <li>
+                                                                <a
+                                                                    onClick={Oneweek}
+                                                                    href="#"
+                                                                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                                >
+                                                                    One Week
+                                                                </a>
+                                                            </li>
+
+
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+
+                                                    {/* <button
 
                                                     id="doubleDropdownButton"
                                                     data-dropdown-toggle="doubleDropdown"
@@ -291,62 +315,34 @@ function Output() {
                                                     className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                                                 >
                                                     {/* <div className="flex justify-center items-center bg-orange-300 "> */}
-                                                    <input type="checkbox" defaultValue="" className="sr-only peer" />
+                                                    {/* <input type="checkbox" defaultValue="" className="sr-only peer" />
                                                     <div className=" absolute w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full rtl:peer-checked:after:translate-x-[-100%] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-500 peer-checked:bg-blue-600" />
-                                                    <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
+                                                    <span className="ms-3 ml-9 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                         January
                                                     </span>
                                                     {/* </div> */}
-                                                    <svg
-                                                        className="w-2.5 h-2.5 ms-3 rtl:rotate-180"
+                                                    {/* <svg */}
+                                                    {/* className="w-2.5 h-2.5 ms-3 rtl:rotate-180"
                                                         aria-hidden="true"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         fill="none"
-                                                        viewBox="0 0 6 10"
-                                                    >
+                                                        viewBox="0 0 6 10" */}
+                                                    {/* >
                                                         <path
                                                             stroke="currentColor"
                                                             strokeLinecap="round"
                                                             strokeLinejoin="round"
                                                             strokeWidth={2}
                                                             d="m1 9 4-4-4-4"
-                                                        />
-                                                    </svg>
-                                                </button>
-                                                <div
-                                                    id="doubleDropdown"
-                                                    ref={RefSub}
-                                                    className="z-10 visible  absolute ml-40 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-                                                >
-                                                    <ul
+                                                        /> */}
+                                                    {/* </svg> */}
+                                                    {/* </button> */}
 
-                                                        className="py-2  text-sm text-gray-700 dark:text-gray-200"
-                                                        aria-labelledby="doubleDropdownButton"
-                                                    >
-                                                        <li>
-                                                            <a
-                                                                onClick={Oneweek}
-                                                                href="#"
-                                                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                            >
-                                                                One Week
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="#"
-                                                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                            >
-                                                                Scend Week
-                                                            </a>
-                                                        </li>
-
-                                                    </ul>
-                                                </div>
-                                            </li>
+                                                </li>
 
 
-                                        </ul>
+                                            </ul>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -420,9 +416,3 @@ function Output() {
 
 }
 export default Output
-
-
-
-
-
-
