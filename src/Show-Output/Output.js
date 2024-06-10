@@ -29,8 +29,7 @@ function Output() {
     const RefShowDropDown = useRef();
 
     const Oneweek = () => {
-        setMondayAM(9);
-        setMondayPM(6);
+
         setWednesdayAM(6);
         setWednesdayPM(7);
         setThursdayAM(6);
@@ -44,23 +43,23 @@ function Output() {
         ConvertInputHoursToCalculate();
     };
 
-    const StockData = {
-        Junry: {
-            oneweek: {
-                Days: {
-                    // monthe: conte.month,
-                    // day: conte.day,
-                    // days: conte.days,
-                    ampm1: "AM",
-                    ampm2: "PM",
-                    hour1: 8,
-                    hour2: 9,
-                    // Mu1: conte.Menit,
-                    // Mu2: conte.Menit2
-                },
-            }
-        }
-    };
+    // const StockData = {
+    //     Junry: {
+    //         oneweek: {
+    //             Days: {
+    //                 // monthe: conte.month,
+    //                 // day: conte.day,
+    //                 // days: conte.days,
+    //                 ampm1: "AM",
+    //                 ampm2: "PM",
+    //                 hour1: 8,
+    //                 hour2: 9,
+    //                 // Mu1: conte.Menit,
+    //                 // Mu2: conte.Menit2
+    //             },
+    //         }
+    //     }
+    // };
 
     const ConvertInputHoursToCalculate = () => {
         const StockData = {
@@ -76,9 +75,9 @@ function Output() {
                         // hour2: conte.Hour2,
 
                         ampm1: "AM",
-                        ampm2: "PM",
-                        hour1: 8,
-                        hour2: 9,
+                        ampm2: "AM",
+                        hour1: "8",
+                        hour2: "10",
                         // Mu1: conte.Menit,
                         // Mu2: conte.Menit2
                     },
@@ -94,29 +93,12 @@ function Output() {
     };
 
     const sendatatochart = () => {
-        const StockData = {
-            Junry: {
-                oneweek: {
-                    Days: {
-                        // monthe: conte.month,
-                        // day: conte.day,
-                        // days: conte.days,
-                        ampm1: "AM",
-                        ampm2: "PM",
-                        hour1: 8,
-                        hour2: 9,
-                        // Mu1: conte.Menit,
-                        // Mu2: conte.Menit2
-                    },
-                }
-            }
-        };
 
-        if (StockData.Junry.oneweek.Days.day === "Tuesday") {
-            setTuesdayAM(DatHourAm);
-            setTuesdayPM(DatHourPm);
-            console.log("yes");
-        }
+
+
+        setMondayAM(DatHourAm);
+        setMondayPM(DatHourPm);
+
 
         console.log(DatHourAm);
         console.log(DatHourPm);
@@ -168,6 +150,11 @@ function Output() {
         DatHourAm = amHours;
         DatHourPm = pmHours;
     };
+
+
+
+
+
 
     const Calculatepercentage = () => {
         const percentage = MondayAM + MondayPM + TuesdayAM + TuesdayPM + WednesdayAM + WednesdayPM + ThursdayAM + ThursdayPM + FridayAM + FridayPM + SaturdayAM + SaturdayPM + SundayAM + SundayPM;
@@ -359,7 +346,7 @@ function Output() {
                 </div>
 
 
-                {/* <div className=" mt-[800px] ml-72 mb-56 absolute overflow-x-auto shadow-md sm:rounded-lg">
+                <div className=" mt-[800px]  mb-56 absolute w-[calc(100%-290px)] ml-[290px] overflow-x-auto shadow-md sm:rounded-lg">
                     <table style={{ backgroundColor: '#1A56DB' }} className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                         <thead style={{ backgroundColor: '#1A56DB' }} className="text-xs text-white  uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr style={{ backgroundColor: '#1A56DB' }}>
@@ -405,7 +392,7 @@ function Output() {
                             </tr>
                         </tbody>
                     </table>
-                </div> */}
+                </div>
 
 
 

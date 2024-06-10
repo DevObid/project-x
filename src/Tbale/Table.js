@@ -21,6 +21,10 @@ function Table() {
 
     const RefMemo = useRef()
 
+    const [memo, setmemo] = useState()
+
+    const [rate, setrate] = useState()
+
     const [days, setdays] = useState("11");
     const [selectedValueAMPM1, setSelectedValueAMPM1] = useState('AM');
     const [selectedValuePMAM2, setSelectedValuePMAM2] = useState('AM');
@@ -36,18 +40,32 @@ function Table() {
 
 
 
+
+
+    const getRate = (event) => {
+
+        setrate(event.target.value)
+
+    }
+    const getMemo = (event) => {
+
+        setmemo(event.target.value)
+
+    }
     const SendJsonData = () => {
 
         console.log(senddata)
+
+        console.log(memo)
 
 
     }
 
     useEffect(() => {
-        setsenddata({ selectedValueAMPM1, selectedValuePMAM2, Hour1, Hour2, Menit, Menit2, month, days, day })
+        setsenddata({ selectedValueAMPM1, selectedValuePMAM2, Hour1, Hour2, Menit, Menit2, month, days, day, memo, rate })
 
 
-    }, [selectedValueAMPM1, selectedValuePMAM2, Hour1, Hour2, Menit, Menit2, month, days, day])
+    }, [selectedValueAMPM1, selectedValuePMAM2, Hour1, Hour2, Menit, Menit2, month, days, day, memo, rate])
 
 
 
@@ -197,116 +215,116 @@ function Table() {
 
                                         </div>
                                         <div className="grid grid-cols-7 text-xs text-center text-gray-900">
-                                            <button onClick={() => handleDays('Monday')} className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
+                                            <button onClick={() => handleDays('Monday')} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold rounded-lg">
                                                 Mo
                                             </button>
-                                            <button onClick={() => handleDays('Tuesday')} className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
+                                            <button onClick={() => handleDays('Tuesday')} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold rounded-lg">
                                                 Tu
                                             </button>
-                                            <button onClick={() => handleDays('Wednesday')} className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
+                                            <button onClick={() => handleDays('Wednesday')} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold rounded-lg">
                                                 We
                                             </button>
-                                            <button onClick={() => handleDays('Thursday')} className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
+                                            <button onClick={() => handleDays('Thursday')} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold rounded-lg">
                                                 Th
                                             </button>
-                                            <button onClick={() => handleDays('Friday')} className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
+                                            <button onClick={() => handleDays('Friday')} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold rounded-lg">
                                                 Fr
                                             </button>
-                                            <button onClick={() => handleDays('Saturday')} className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
+                                            <button onClick={() => handleDays('Saturday')} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold rounded-lg">
                                                 Sa
                                             </button>
-                                            <button onClick={() => handleDays('Sunday')} className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg">
+                                            <button onClick={() => handleDays('Sunday')} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold rounded-lg">
                                                 Su
                                             </button>
 
-                                            <button onClick={() => HnadlDay(1)} className="flex items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
+                                            <button onClick={() => HnadlDay(1)} className="flex  hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
                                                 1
                                             </button>
-                                            <button onClick={() => HnadlDay(2)} className="flex items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
+                                            <button onClick={() => HnadlDay(2)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
                                                 2
                                             </button>
-                                            <button onClick={() => HnadlDay(3)} className="flex items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
+                                            <button onClick={() => HnadlDay(3)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
                                                 3
                                             </button>
-                                            <button onClick={() => HnadlDay(4)} className="flex items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
+                                            <button onClick={() => HnadlDay(4)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
                                                 4
                                             </button>
-                                            <button onClick={() => HnadlDay(5)} className="flex items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
+                                            <button onClick={() => HnadlDay(5)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
                                                 5
                                             </button>
-                                            <button onClick={() => HnadlDay(6)} className="flex items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
+                                            <button onClick={() => HnadlDay(6)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
                                                 6
                                             </button>
-                                            <button onClick={() => HnadlDay(7)} className="flex items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
+                                            <button onClick={() => HnadlDay(7)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 text-gray-700 rounded-lg">
                                                 7
                                             </button>
-                                            <button onClick={() => HnadlDay(8)} className="flex items-center justify-center w-10 h-10 rounded-lg">
+                                            <button onClick={() => HnadlDay(8)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 rounded-lg">
                                                 8
                                             </button>
-                                            <button onClick={() => HnadlDay(9)} className="flex items-center justify-center w-10 h-10 font-semibold rounded-lg bg-gray-50">
+                                            <button onClick={() => HnadlDay(9)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold rounded-lg bg-gray-50">
                                                 9
                                             </button>
-                                            <button onClick={() => HnadlDay(10)} className="flex items-center justify-center w-10 h-10 rounded-lg">
+                                            <button onClick={() => HnadlDay(10)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 rounded-lg">
                                                 10
                                             </button>
-                                            <button onClick={() => HnadlDay(11)} className="flex items-center justify-center w-10 h-10 rounded-lg">
+                                            <button onClick={() => HnadlDay(11)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 rounded-lg">
                                                 11
                                             </button>
-                                            <button onClick={() => HnadlDay(12)} className="flex items-center justify-center w-10 h-10 rounded-lg">
+                                            <button onClick={() => HnadlDay(12)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 rounded-lg">
                                                 12
                                             </button>
-                                            <button onClick={() => HnadlDay(13)} className="flex items-center justify-center w-10 h-10 rounded-lg">
+                                            <button onClick={() => HnadlDay(13)} className="flex  hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 rounded-lg">
                                                 13
                                             </button>
-                                            <button onClick={() => HnadlDay(14)} className="flex items-center justify-center w-10 h-10 rounded-lg">
+                                            <button onClick={() => HnadlDay(14)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 rounded-lg">
                                                 14
                                             </button>
-                                            <button onClick={() => HnadlDay(15)} className="flex items-center justify-center w-10 h-10 rounded-lg">
+                                            <button onClick={() => HnadlDay(15)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 rounded-lg">
                                                 15
                                             </button>
-                                            <button onClick={() => HnadlDay(16)} className="flex items-center justify-center w-10 h-10 rounded-lg">
+                                            <button onClick={() => HnadlDay(16)} className="flex hover:bg-blue-600 hover:text-white  items-center justify-center w-10 h-10 rounded-lg">
                                                 16
                                             </button>
-                                            <button onClick={() => HnadlDay(17)} className="flex items-center justify-center w-10 h-10 rounded-lg">
+                                            <button onClick={() => HnadlDay(17)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 rounded-lg">
                                                 17
                                             </button>
-                                            <button onClick={() => HnadlDay(18)} className="flex items-center justify-center w-10 h-10 text-white bg-blue-600 rounded-l-lg">
+                                            <button onClick={() => HnadlDay(18)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10  rounded-l-lg">
                                                 18
                                             </button>
-                                            <button onClick={() => HnadlDay(19)} className="flex items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
+                                            <button onClick={() => HnadlDay(19)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
                                                 19
                                             </button>
-                                            <button onClick={() => HnadlDay(20)} className="flex items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
+                                            <button onClick={() => HnadlDay(20)} className="flex hover:bg-blue-600 hover:text-white  items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
                                                 20
                                             </button>
-                                            <button onClick={() => HnadlDay(21)} className="flex items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none rounded-tr-lg bg-gray-50">
+                                            <button onClick={() => HnadlDay(21)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none rounded-tr-lg bg-gray-50">
                                                 21
                                             </button>
-                                            <button onClick={() => HnadlDay(22)} className="flex items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none rounded-l-lg bg-gray-50">
+                                            <button onClick={() => HnadlDay(22)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none rounded-l-lg bg-gray-50">
                                                 22
                                             </button>
-                                            <button onClick={() => HnadlDay(23)} className="flex items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
+                                            <button onClick={() => HnadlDay(23)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
                                                 23
                                             </button>
-                                            <button onClick={() => HnadlDay(24)} className="flex items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
+                                            <button onClick={() => HnadlDay(24)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
                                                 24
                                             </button>
-                                            <button onClick={() => HnadlDay(25)} className="flex items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
+                                            <button onClick={() => HnadlDay(25)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
                                                 25
                                             </button>
-                                            <button onClick={() => HnadlDay(26)} className="flex items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
+                                            <button onClick={() => HnadlDay(26)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
                                                 26
                                             </button>
-                                            <button onClick={() => HnadlDay(27)} className="flex items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
+                                            <button onClick={() => HnadlDay(27)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
                                                 27
                                             </button>
-                                            <button onClick={() => HnadlDay(28)} className="flex items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
+                                            <button onClick={() => HnadlDay(28)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
                                                 28
                                             </button>
-                                            <button onClick={() => HnadlDay(29)} className="flex items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
+                                            <button onClick={() => HnadlDay(29)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
                                                 29
                                             </button>
-                                            <button onClick={() => HnadlDay(30)} className="flex items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
+                                            <button onClick={() => HnadlDay(30)} className="flex hover:bg-blue-600 hover:text-white items-center justify-center w-10 h-10 font-semibold text-blue-600 rounded-none bg-gray-50">
                                                 30
                                             </button>
 
@@ -436,12 +454,12 @@ function Table() {
                                         </div>
                                         <div className="absolute top-[300px]  w-[400px] flex-block justify-start items-center mt-5">
                                             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rate</label>
-                                            <input ref={RefRate} type="number" className="bg-gray-50 border w-28 h-8 border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$00" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+                                            <input onChange={getRate} type="number" className="bg-gray-50 border w-28 h-8 border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$00" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
                                         </div>
                                         <div className="mb-6 mt-40 absolute">
 
                                             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Memo</label>
-                                            <textarea ref={RefMemo} id="message" rows="4" className="block p-2.5 w-[400px] h-[100px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                                            <textarea onChange={getMemo} id="message" rows="4" className="block p-2.5 w-[400px] h-[100px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
 
                                         </div>
 
