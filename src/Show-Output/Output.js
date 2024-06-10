@@ -209,8 +209,8 @@ function Output() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h5 className="leading-none text-2xl font-bold text-gray-900 dark:text-white pb-1">3.4k</h5>
-                                    <p className="text-sm font-normal text-gray-500 dark:text-gray-400">Revunue</p>
+                                    <h5 className="leading-none text-2xl font-bold text-white dark:text-white pb-1">3.4k</h5>
+                                    <p className="text-sm font-normal text-white dark:text-gray-400">Revunue</p>
                                 </div>
                             </div>
                             <div>
